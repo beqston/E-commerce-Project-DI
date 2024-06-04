@@ -1,0 +1,17 @@
+.fixed-prod-secrtion{
+    width: 100%;
+    background-color: var( --color-white-lite);
+
+    .item{
+        background-color: green;
+    }
+    
+    
+    .fixed-prod-secrtion-container{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        column-gap: 1,875rem;
+    }
+}
