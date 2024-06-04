@@ -1,0 +1,22 @@
+@import url("./assets//style/color.css");
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Manrope", sans-serif;
+  src: url('./assets/Font/Manrope-Regular.ttf');
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+body{
+  font-family: "Manrope", sans-serif;
+}
