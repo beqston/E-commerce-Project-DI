@@ -71,13 +71,13 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/"}>HEADPHONES</Link>
+                <Link to={"/headphones"}>HEADPHONES</Link>
               </li>
               <li>
-                <Link to={"/"}>SPEAKERS</Link>
+                <Link to={"/speakers"}>SPEAKERS</Link>
               </li>
               <li>
-                <Link to={"/"}>EARPHONES</Link>
+                <Link to={"/earphones"}>EARPHONES</Link>
               </li>
             </ul>
           </nav>

@@ -12,9 +12,9 @@ const ProductSection = ()=> {
     return(
         <section className={classname['fixed-prod-secrtion']}>
 
-            <div className={classname['fixed-prod-secrtion-container']}>
+            <div className={classname['secrtion-container']}>
 
-                <div className={classname['item item1']}>
+                <div className={classname['item']}>
                     <div className={classname['img-container']}>
                         <div className={classname['item-img']}>
                             <img src={item1} alt="photo" />
@@ -27,8 +27,9 @@ const ProductSection = ()=> {
                     <Link to={'/headphones'}><ButtonShop /></Link>
                 </div>
 
-                <div className={classname['item item2']}>
+                <div className={classname['item']}>
                 <div className={classname['img-container']}>
+                    
                         <div className={classname['item-img']}>
                             <img src={item2} alt="photo" />
                         </div>
@@ -40,7 +41,7 @@ const ProductSection = ()=> {
                     <Link to={'/speakers'}><ButtonShop /></Link>
                 </div>
 
-                <div className={classname['item item3']}>
+                <div className={classname['item']}>
                 <div className={classname['img-container']}>
                         <div className={classname['item-img']}>
                             <img src={item3} alt="photo" />

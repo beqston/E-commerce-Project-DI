@@ -1,17 +1,103 @@
 .fixed-prod-secrtion{
     width: 100%;
     background-color: var( --color-white-lite);
-
-    .item{
-        background-color: green;
-    }
     
-    
-    .fixed-prod-secrtion-container{
-        width: 90%;
+    .secrtion-container{
+        width: 77%;
         margin: auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         column-gap: 1,875rem;
+        padding-top: 8rem;
+        
+
+        .item{
+            width: 31.5%;
+            height: 13rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-grey10);
+            position: relative;
+            border-radius: 8px;
+
+            .img-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                
+                .item-img{
+                    transform: translateY(-3.8rem);
+                }
+
+                .oval{
+                    transform: translateY(-6.4rem);
+                }
+            }
+
+            h4{
+                padding-top: 4rem;
+                padding-bottom: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 1.3px;
+                font-weight: 700;
+                font-size: 1.125rem;
+            }
+
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .fixed-prod-secrtion{
+        .secrtion-container{
+            width: 90%;
+            .item{
+
+                .img-container{
+                    .item-img{
+                        width: 80px;
+                        height: 104px;
+                        translate:-0.8rem -2rem;
+                    }
+                }
+                h4{
+                    font-size: 15px;
+                    letter-spacing: 1.071px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .fixed-prod-secrtion{
+        .secrtion-container{
+            flex-direction: column;
+            align-items: center;
+            gap: 120px;
+
+            .item{
+                width: 90%;
+                display: flex;
+                row-gap: 2rem;
+                .img-container{
+                    transform: translateY(1.2rem);
+                    .item-img{
+                        width: 80px;
+                        height: 104px;
+                        translate:-0.8rem -2rem;
+                    }
+                }
+                h4{
+                   transform: translateY(2rem);
+                }
+            }
+        }
     }
 }
