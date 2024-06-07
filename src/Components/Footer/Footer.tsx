@@ -24,9 +24,9 @@ const Footer = () => {
                 <nav>
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/headphones'}>HEADPHONES</Link></li>
-                        <li><Link to={'/speakers'}>SPEAKERS</Link></li>
-                        <li><Link to={'/earphones'}>EARPHONES</Link></li>
+                        <li><Link to={'/product/headphones'}>HEADPHONES</Link></li>
+                        <li><Link to={'/product/speakers'}>SPEAKERS</Link></li>
+                        <li><Link to={'/product/earphones'}>EARPHONES</Link></li>
                     </ul>
                 </nav>
             </div>

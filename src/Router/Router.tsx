@@ -10,9 +10,9 @@ const Router = ()=> {
     return(
         <Routes>
             <Route path="/"  element={<Home />} />
-            <Route path="/headphones"  element={<Headphones />} />
-            <Route path="/speakers"  element={<Speakers />} />
-            <Route path="/earphones"  element={<Earphones />} />
+            <Route path="/product/headphones"  element={<Headphones />} />
+            <Route path="/product/speakers"  element={<Speakers />} />
+            <Route path="/product/earphones"  element={<Earphones />} />
             <Route path="*"  element={<NotFound />} />
         </Routes>
     )

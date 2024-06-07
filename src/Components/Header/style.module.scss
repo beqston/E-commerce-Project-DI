@@ -208,3 +208,11 @@
         
     }
 }
+
+@media screen and (max-width: 340px) {
+    .header-left-container{
+        .img{
+            translate: 2rem;
+        }
+    }
+}

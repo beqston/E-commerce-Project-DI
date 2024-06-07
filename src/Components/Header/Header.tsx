@@ -9,17 +9,6 @@ const Header = () => {
   const [burgIcon, setBurgIcon] = useState("burg-menu-icon");
   const [menuList, setMenutList] = useState("none");
 
-  const HandlHeader = ()=> {
-    if(menuList === 'none'){
-      setMenutList('burg-menu-list')
-      setBurgIcon("none")
-    } else{
-      setMenutList('none')
-      setBurgIcon("burg-menu-icon")
-    }
-    
-  }
-
   const handlBurgIcon = () => {
     setBurgIcon("none");
     setMenutList("burg-menu-list");
@@ -30,7 +19,7 @@ const Header = () => {
     setMenutList("none");
   };
   return (
-    <header onClick={HandlHeader}>
+    <header>
       <div className={classname["header-container"]}>
       
       
@@ -45,13 +34,13 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/"}>HEADPHONES</Link>
+                <Link to={"/product/headphones"}>HEADPHONES</Link>
               </li>
               <li>
-                <Link to={"/"}>SPEAKERS</Link>
+                <Link to={"/product/speakers"}>SPEAKERS</Link>
               </li>
               <li>
-                <Link to={"/"}>EARPHONES</Link>
+                <Link to={"/product/earphones"}>EARPHONES</Link>
               </li>
             </ul>
           </nav>
@@ -71,13 +60,13 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/headphones"}>HEADPHONES</Link>
+                <Link to={"/product/headphones"}>HEADPHONES</Link>
               </li>
               <li>
-                <Link to={"/speakers"}>SPEAKERS</Link>
+                <Link to={"/product/speakers"}>SPEAKERS</Link>
               </li>
               <li>
-                <Link to={"/earphones"}>EARPHONES</Link>
+                <Link to={"/product/earphones"}>EARPHONES</Link>
               </li>
             </ul>
           </nav>

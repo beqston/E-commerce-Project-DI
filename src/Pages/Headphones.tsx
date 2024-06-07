@@ -1,7 +1,9 @@
+import HeadphonesHead from "../Components/CategorySection/HeadphonesHead";
+
 const Headphones = ()=> {
     return(
         <main>
-            HEADPHONES
+            <HeadphonesHead />
         </main>
     )
 }

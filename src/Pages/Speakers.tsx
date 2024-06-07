@@ -1,7 +1,9 @@
+import SpeakersHead from "../Components/CategorySection/SpeakersHead";
+
 const Speakers = ()=> {
     return(
         <main>
-            Speakers
+            <SpeakersHead />
         </main>
     )
 }
