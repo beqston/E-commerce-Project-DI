@@ -1,21 +1,25 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../Pages/Home";
-import Headphones from "../Pages/Headphones";
-import Speakers from "../Pages/Speakers";
-import Earphones from "../Pages/Eearphones";
 import NotFound from "../Pages/NotFound";
+import Layout from "../Layout/Layout";
+import Product from "../Pages/Product";
+import Products from "../Pages/Products";
 
 
-const Router = ()=> {
+const RouterComponent = ()=> {
     return(
         <Routes>
-            <Route path="/"  element={<Home />} />
-            <Route path="/product/headphones"  element={<Headphones />} />
-            <Route path="/product/speakers"  element={<Speakers />} />
-            <Route path="/product/earphones"  element={<Earphones />} />
-            <Route path="*"  element={<NotFound />} />
+            <Route element={<Layout />}>
+                <Route path="/"  element={<Home />} />
+                {/* <Route path="/products/headphones"  element={<Headphones />} />
+                <Route path="/products/speakers"  element={<Speakers />} />
+                <Route path="/products/earphones"  element={<Earphones />} /> */}
+                <Route path="/products/:productsName"  element={<Products />} />
+                <Route path="/products/:productsName/:productID"  element={<Product />} />
+                <Route path="*"  element={<NotFound />} />
+            </Route>
         </Routes>
     )
 }
   
-  export default Router;
+  export default RouterComponent;

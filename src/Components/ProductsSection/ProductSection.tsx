@@ -24,7 +24,7 @@ const ProductSection = ()=> {
                         </div>
                     </div>
                     <h4>HEADPHONES</h4>
-                    <Link to={'/headphones'}><ButtonShop /></Link>
+                    <Link to={'/products/headphones'}><ButtonShop /></Link>
                 </div>
 
                 <div className={classname['item']}>
@@ -38,7 +38,7 @@ const ProductSection = ()=> {
                         </div>
                     </div>
                     <h4>SPEAKERS</h4>
-                    <Link to={'/speakers'}><ButtonShop /></Link>
+                    <Link to={'/products/speakers'}><ButtonShop /></Link>
                 </div>
 
                 <div className={classname['item']}>
@@ -51,7 +51,7 @@ const ProductSection = ()=> {
                         </div>
                     </div>
                     <h4>EARPHONES</h4>
-                    <Link to={'/earphones'}><ButtonShop /></Link>
+                    <Link to={'/products/earphones'}><ButtonShop /></Link>
                 </div>
             </div>
         </section>

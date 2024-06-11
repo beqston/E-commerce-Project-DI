@@ -34,13 +34,13 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/product/headphones"}>HEADPHONES</Link>
+                <Link to={"/products/headphones"}>HEADPHONES</Link>
               </li>
               <li>
-                <Link to={"/product/speakers"}>SPEAKERS</Link>
+                <Link to={"/products/speakers"}>SPEAKERS</Link>
               </li>
               <li>
-                <Link to={"/product/earphones"}>EARPHONES</Link>
+                <Link to={"/products/earphones"}>EARPHONES</Link>
               </li>
             </ul>
           </nav>
@@ -60,13 +60,13 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/product/headphones"}>HEADPHONES</Link>
+                <Link to={"/products/headphones"}>HEADPHONES</Link>
               </li>
               <li>
-                <Link to={"/product/speakers"}>SPEAKERS</Link>
+                <Link to={"/products/speakers"}>SPEAKERS</Link>
               </li>
               <li>
-                <Link to={"/product/earphones"}>EARPHONES</Link>
+                <Link to={"/products/earphones"}>EARPHONES</Link>
               </li>
             </ul>
           </nav>
