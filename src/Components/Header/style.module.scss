@@ -45,6 +45,9 @@
                         text-transform: uppercase;
                         color:var(--color-white100)
                     }
+                    a:active{
+                        color:#D87D4A;
+                    }
                 }
             }
         }
@@ -124,6 +127,9 @@
                     a{
                         text-decoration: none;
                         color: white;
+                    }
+                    a:active{
+                        color:#D87D4A;
                     }
                 }
             }

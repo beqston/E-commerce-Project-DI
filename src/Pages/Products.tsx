@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsType } from "../Types/ProductsTypes";
-import "../Components/CategorySection/style.scss"
+import "../assets/style/pages.scss"
 
 const Products = ()=> {
 
     const {productsName} = useParams()
-    console.log(productsName)
+    
     const [prods, setProds] = useState<null | ProductsType[]>(null)
 
     const getData = async ()=> {
