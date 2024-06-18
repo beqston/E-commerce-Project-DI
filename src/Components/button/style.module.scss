@@ -9,6 +9,8 @@
     cursor: pointer;
 }
 
+
+
 .btn-chokolate:hover{
     background-color: var(--color-chokolate-lite);
 }
@@ -24,10 +26,13 @@
     cursor: pointer;
 }
 
+
 .btn-white:hover{
     background-color: var(--color-black100);
     color: var(--color-white100);
 }
+
+
 
 .btn-shop{
     font-size: 0.8125rem;
@@ -49,4 +54,20 @@
 
 .btn-shop:hover{
     color: var(--color-chokolate100);
+}
+
+
+.btn-grey{
+    background-color: #4C4C4C;
+    font-size: 0.8125rem;
+    color: var(--color-white100);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.9rem 1.9rem;
+    border-style: none;
+    cursor: pointer;
+}
+
+.btn-grey:hover{
+    background-color: #8a8989;
 }

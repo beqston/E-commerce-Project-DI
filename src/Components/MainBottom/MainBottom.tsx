@@ -6,7 +6,7 @@ import img1D from "../../assets/Photos/MainBottomImg/Bitmap.png"
 const MainBottom = () => {
 
     return(
-        <section className={classname['mainbottom-section']}>
+        <section className={classname['main-bottom-section']}>
             <div className={classname['main-btm-cnt']}>
                 <div className={classname['main-botttom1']}>
                     <h3>
