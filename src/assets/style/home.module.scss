@@ -846,4 +846,404 @@
     }
 
 
+ .home{
+    .speaker2-cnt{
+        width: 100%;
+        margin-top: 13rem;
     
+        div{
+            width: 77%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            row-gap: 2rem;
+            border-radius: 10px;
+            background-color: var(--color-grey10);
+            padding-bottom: 7rem;
+            padding-left: 8rem;
+            padding-top: 7rem;
+            background-image: url("../../../public/assets/home/desktop/image-speaker-zx7.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            h4{
+                color: var(--color-black100);
+                font-size: 28px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+        }
+    }
+ }
+
+ @media screen and (max-width: 1440px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-position: 0 40px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 1300px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                width: 87%;
+                background-size: 130%;
+                background-position: -100px -30px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 1258px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-position: -120px 0px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 1128px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 150%;
+                background-position: -120px 0px;
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 980px) {
+    .home{
+        width: 87%;
+        .speaker2-cnt{
+            div{
+                background-size: 140%;
+                background-position: -130px 40px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 980px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 100%;
+                background-image: url("../../../public/assets/home/tablet/image-speaker-zx7.jpg");
+               background-position: 0 0;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 930px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 110%;
+                background-image: url("../../../public/assets/home/tablet/image-speaker-zx7.jpg");
+               background-position: 0 0px;
+
+               h4{
+                transform: translateX(-3rem);
+               }
+               a{
+                transform: translateX(-3rem);
+               }
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 812px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                height: 290px;
+                background-size: 100%;
+               background-position: 0px 0px;
+
+               h4{
+                transform: translateX(-5rem);
+               }
+               a{
+                transform: translateX(-5rem);
+               }
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 768px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 107%;
+               background-position: -38px 0px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 700px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 117%;
+               background-position: -48px 0px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 580px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                height: 230px;
+                background-size: 123%;
+               background-position: 0px 0px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 510px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                max-height: 220px;
+               background-position: 0px 0px;
+            }
+        }
+     }
+ }
+
+ @media screen and (max-width: 480px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                max-height: 210px;
+                background-size: 132%;
+               background-position: 0px 0px;
+            }
+        }
+     }
+ }
+ 
+ @media screen and (max-width: 458px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 138%;
+               background-position: 0px 0px;
+            }
+        }
+     }
+ }
+
+ 
+ @media screen and (max-width: 400px) {
+    .home{
+        .speaker2-cnt{
+            margin: 0 auto;
+                width: 100%;
+                margin-top: 150px;
+            div{
+                margin: 0 auto;
+                width: 90%;
+                transform: translateY(40px);
+                background-size: 100%;
+                background-image: url("../../../public/assets/home/mobile/image-speaker-zx7.jpg");
+                background-position: 0 -30px;
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 375px) {
+    .home{
+        .speaker2-cnt{
+            width: 87%;
+            margin-top: 150px;
+            margin-bottom: -50px;
+            div{
+                padding-top: 30px;
+                padding-bottom: 40px;
+                transform: translateY(40px);
+                background-size: 100%;
+                background-image: url("../../../public/assets/home/mobile/image-speaker-zx7.jpg");
+                background-position: 0 -30px;
+
+                h4{
+                    transform: translateX(-5.8rem);
+                    padding-top: 40px;
+                    margin-top: 40px;
+                }
+                a{
+                    width: 170px;
+                    transform: translateX(-5.8rem);
+                    padding-bottom: 80px;
+                }
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 348px) {
+    .home{
+        .speaker2-cnt{
+            div{
+                background-size: 138%;
+               background-position: 0px 0px;
+            }
+        }
+     }
+ }
+
+ .earphones{
+    width: 77%;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    
+
+    .img{
+        width: 48%;
+        
+        
+        picture{
+            width: 100%;
+            img{
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .text-cnt{
+        width: 48%;
+        border-radius: 10px;
+        background-color: var(--color-grey10);
+
+        h4{
+            width: 100%;
+            color:var(--color-black100);
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding-left: 5.9375rem;
+            padding-top: 6.3125rem;
+            padding-bottom: 2rem;
+        }
+
+        a{
+            padding-left: 5.9375rem;
+            margin-bottom: 6.3125rem;
+        }
+    }
+ }
+ @media screen and (max-width: 1024px) {
+    .earphones{ 
+        width: 87%;
+        height: 320px;
+        .img{
+            width: 49%;
+            height: 100%;
+            picture{
+                height: 100%;
+                img{
+                    height: 100%;
+                }
+            }
+        }
+        .text-cnt{
+            width: 49%; 
+            h4{
+                padding-left: 2.65625rem;
+            }
+            a{
+                padding-left: 2.65625rem;
+              
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 740px) {
+    .earphones{ 
+        .img{
+            width: 49%;
+            height: 100%;
+            picture{
+                height: 100%;
+                img{
+                    height: 100%;
+                }
+            }
+        }
+        .text-cnt{
+            width: 49%; 
+            h4{
+                padding-left: 2.65625rem;
+            }
+            a{
+                padding-left: 2.65625rem;
+              
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 590px) {
+    .earphones{ 
+        flex-direction: column;
+        row-gap: 30px;
+        margin-bottom: 40px;
+        .img{
+            width: 100%;
+        }
+        .text-cnt{
+            width: 100%; 
+            padding-bottom: 2.5625rem;
+            h4{
+                width: 248px;
+                padding-top: 2.5625rem;
+                padding-left: 1.5rem;
+            }
+            a{
+                margin-bottom: 2.5625rem;
+                padding-left: 1.5rem;
+            }
+        }
+     }
+ }
+ @media screen and (max-width: 380px) {
+    .earphones{ 
+        margin-bottom: 70px;
+      
+        .img{
+            margin-top: 70px;
+            width: 100%;
+        }
+        .text-cnt{
+            width: 100%; 
+            padding-bottom: 2.5625rem;
+            h4{
+                width: 248px;
+                padding-top: 2.5625rem;
+                padding-left: 1.5rem;
+            }
+            a{
+                margin-bottom: 2.5625rem;
+                padding-left: 1.5rem;
+            }
+        }
+     }
+ }

@@ -1,0 +1,28 @@
+.products{
+    width: 100%;
+    article{
+        width: 77%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .products-img{
+            width: 100%;
+            display: flex;
+
+            picture{
+                max-width: 48%;
+                img{
+                    max-width: 100%;
+                }
+            }
+
+            .text-cnt{
+                width: 48%;
+            }
+        }
+    }
+
+   
+}

@@ -3,30 +3,15 @@ import ProductSection from "../Components/ProductsSection/ProductSection";
 import classname from "../assets/style/home.module.scss"
 import ButtonChokolate from "../Components/button/ButtonChokolate";
 import { Link } from "react-router-dom";
-
 import speaker from "../../public/assets/home/desktop/image-speaker-zx9.png"
 import ButtonGrey from "../Components/button/ButtonGrey";
-// import { useParams } from "react-router-dom";
-// import { useEffect, useState } from "react";
-// import { ProductsType } from "../Types/ProductsTypes";
+import ButtonTransparent from "../Components/button/ButtonTransparent";
+import earphonesDes from "../../public/assets/home/desktop/image-earphones-yx1.jpg"
+import earphonesTab from "../../public/assets/home/tablet/image-earphones-yx1.jpg"
+import earphonesMob from "../../public/assets/home/mobile/image-earphones-yx1.jpg"
 
 
 const Home = ()=>  {
-    
-    // const {productsName} = useParams()
-    
-    // const [prods, setProds] = useState<null | ProductsType[]>(null)
-
-    // const getData = async ()=> {
-    //     const res = await fetch('http://localhost:3000/products')
-    //     const data = await res.json()
-    //     console.log(data)
-    //     setProds(data)
-    // }
-
-    // useEffect(()=> {
-    //     getData()
-    // }, [])
 
     return(
         <main className={classname.home}>
@@ -96,6 +81,33 @@ const Home = ()=>  {
 
                 </div>
 
+            </section>
+
+            <section className={classname['speaker2-cnt']}>
+
+               <div>
+                    <h4>ZX7 SPEAKER</h4>
+                    
+                    <Link to={"/products/headphones/5"}><ButtonTransparent /></Link>
+               </div>
+
+            </section>
+
+            <section className={classname['earphones']}>
+                <div className={classname.img}>
+                    
+                <picture>
+                    <img src={earphonesDes} alt="earphones"/>
+                    <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={earphonesTab}/>
+                    <source media="(max-width: 768px)" srcSet={earphonesMob}/>
+                </picture>
+
+                </div>
+
+                <div className={classname['text-cnt']}>
+                    <h4>YX1 EARPHONES</h4>
+                    <Link to={"/products/headphones/1"}><ButtonTransparent /></Link>
+                </div>
             </section>
 
             <MainBottom />
