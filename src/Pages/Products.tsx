@@ -4,6 +4,8 @@ import { ProductsType } from "../Types/ProductsTypes";
 import "../assets/style/pages.scss"
 import classname from "../assets/style/pages.module.scss"
 import ButtonChokolate from "../Components/button/ButtonChokolate";
+import ProductSection from "../Components/ProductsSection/ProductSection";
+import MainBottom from "../Components/MainBottom/MainBottom";
 
 const Products = ()=> {
 
@@ -47,9 +49,9 @@ const Products = ()=> {
         {/* //main context */}
     
         
+        <main className={classname.pages}>
         {prods?.filter((prod)=> prod.category === productsName).map((prod)=>{
             return(
-                <>
 
                 <section className={classname['products']} key={prod.id}>
                   
@@ -57,17 +59,20 @@ const Products = ()=> {
                   
                   <div className={classname['products-img']}>
 
-                    <picture>
-                        <img src={`http://localhost:5173/${prod.categoryImage.desktop}`} alt="photo" />
-                        <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.categoryImage.tablet}`}/>
-                        <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.categoryImage.mobile}`}/>
-                    </picture>
+                      <div className={classname.picture}>
+                        <picture>
+                                <img src={`http://localhost:5173/${prod.categoryImage.desktop}`} alt="photo" />
+                                <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.categoryImage.tablet}`}/>
+                                <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.categoryImage.mobile}`}/>
+                            </picture>
+                      </div>
 
-                    <div className={classname['text-cnt']}>
-                        <span>{prod.new?'new product': '' }</span>
-                        <p>{prod.description}</p>
-                        <Link to={`http://localhost:5173/products/${prod.category}/${prod.id}`}><ButtonChokolate /></Link>
-                  </div>
+                        <div className={classname['text-cnt']}>
+                            <span>{prod.new?'new product': '' }</span>
+                            <h2>{prod.name}</h2>
+                            <p>{prod.description}</p>
+                            <Link to={`http://localhost:5173/products/${prod.category}/${prod.id}`}><ButtonChokolate /></Link>
+                        </div>
 
 
                   </div>
@@ -78,10 +83,13 @@ const Products = ()=> {
 
                 </section>
                 
-                </>
             )
             
         })}
+        </main>
+
+        <ProductSection />
+        <MainBottom />
         </>
     )
 }
