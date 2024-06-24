@@ -45,8 +45,6 @@ const Products = ()=> {
             )
             
         }).find(()=> productsName === productsName)} 
-
-        {/* //main context */}
     
         
         <main className={classname.pages}>

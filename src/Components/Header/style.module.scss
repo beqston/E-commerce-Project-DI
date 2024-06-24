@@ -103,37 +103,13 @@
             top: 2.4rem;
         }
         nav{
-            width: 140%;
+            width: 150%;
             height: 100vh;
             position: absolute;
             display: flex;
             justify-content: flex-start;
-            background-color: black;
             z-index: 30;
-            top: 90px;
-            ul{
-                position: absolute;
-                top: 10px;
-                left: 8px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-                translate: 200px;
-                li{
-                    list-style-type: none;
-                    padding-left: 4px;
-    
-                    a{
-                        text-decoration: none;
-                        color: white;
-                    }
-                    a:active{
-                        color:#D87D4A;
-                    }
-                }
-            }
-            
+            top: -70px;  
         }
 
         .burg-menu-icon{
@@ -169,6 +145,13 @@
     }
 }
 
+@media screen and (max-width: 710px) {
+    .burg-menu-container{
+        nav{
+            top: 130px;
+        }
+    }
+}
 
 @media screen and (max-width: 440px){
     .header-left-container{
@@ -188,30 +171,11 @@
         left: 2.4rem;
         top: 2.4rem;
     }
-    nav{
-        width: 100%;
 
-        ul{
-            position: absolute;
-            top: 10px;
-            left: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: start;
-            translate: -100px;
-            li{
-                list-style-type: none;
-                padding-left: 4px;
-                translate: -4.8rem;
-
-                a{
-                    text-decoration: none;
-                    color: white;
-                }
-            }
+    .burg-menu-container{
+        nav{
+            width: 150%;
         }
-        
     }
 }
 
