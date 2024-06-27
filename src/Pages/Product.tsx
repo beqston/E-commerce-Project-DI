@@ -37,6 +37,7 @@ const Product = ()=> {
                 return(
                     <section key={prod.id} className={classname['item-cnt']}>
                        
+                       <section className={classname['top-section']}>
                        <div className={classname.picture}>
                             <picture>
                                 <img src={`http://localhost:5173/${prod.categoryImage.desktop}`} alt="photo" />
@@ -46,19 +47,72 @@ const Product = ()=> {
                       </div>
 
                       <div className={classname['text-cnt']}>
-                        <h2>{prod.name}</h2>
-                        <p>{prod.description}</p>
-                        <p><span>$ {prod.price}</span></p>
+                        <h3>{prod.name}</h3>
+                        <p className={classname['description']}>{prod.description}</p>
+                        <p className={classname['price']}><span>$ {prod.price}</span></p>
+
+                        <div className={classname['count-addcard']}>
+                            <CountInput />
+                            <AddToCard />
+                        </div>
 
                       </div>
+                       </section>
+            
+
+                      <section className={classname['bottom-section']}>
+
+                        <div className={classname['features-cnt']}>
+                            <h4>FEATURES</h4>
+                            <p>{prod.features}</p>
+                        </div>
+
+
+                        <div className={classname['box']}>
+                            <h4>in the box</h4>
+
+                          
+
+                            <div className={classname['quantity-item-cnt']}>
+
+                            <div className={classname['includes-cnt']}>
+                                <>{prod.includes.map((item)=>{
+                                    return(
+                                        <div className={classname['quantity-item']}>
+                                            <div className={classname['quantity']}>
+                                                <span>{item.quantity}X</span>
+                                            </div>
+                                            <p>
+                                                {item.item}
+                                            </p>
+                                        </div>
+                                    )
+                                })}</>
+                            </div>
+
+                            {/* <div className={classname['item']}>
+                                <>
+                                    {prod.includes.map((item)=>{
+                                        return(
+                                            <span>
+                                                {item.item}
+                                            </span>
+                                        )
+                                    })}
+                                </>
+                            </div> */}
+
+                            </div>
+                            
+                            
+
+                        </div>
+                      </section>
 
                     </section>
                 )
             })}
             </>
-
-            <CountInput />
-            <AddToCard />
         </main>
       
     )
