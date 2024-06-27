@@ -62,7 +62,7 @@ const Header = () => {
 
         <div className={classname["header-right-container"]}>
           <div className={classname["card-img"]}>
-            <img src={Card} alt="Card" />
+            <Link to={"/products/chekout"}><img src={Card} alt="Card" /></Link>
           </div>
         </div>
       </div>

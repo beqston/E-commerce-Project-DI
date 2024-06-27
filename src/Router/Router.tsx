@@ -4,6 +4,7 @@ import NotFound from "../Pages/NotFound";
 import Layout from "../Layout/Layout";
 import Product from "../Pages/Product";
 import Products from "../Pages/Products";
+import Checkout from "../Pages/Checkout";
 
 
 const RouterComponent = ()=> {
@@ -13,6 +14,7 @@ const RouterComponent = ()=> {
                 <Route path="/"  element={<Home />} />
                 <Route path="/products/:productsName"  element={<Products />} />
                 <Route path="/products/:productsName/:productID"  element={<Product />} />
+                <Route path="/products/chekout" element={<Checkout />} />
                 <Route path="*"  element={<NotFound />} />
             </Route>
         </Routes>
