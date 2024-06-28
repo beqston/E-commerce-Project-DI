@@ -18,9 +18,9 @@ const CountInput = ()=> {
 
     return(
         <div className="countinput-cnt">
-            <span className="minus"  onClick={handlClickMinus}>-</span>
+            <span className="decrease"  onClick={handlClickMinus}>-</span>
             <span className="count">{count}</span>
-            <span className="plus" onClick={handlClickPlus}>+</span>
+            <span className="increase" onClick={handlClickPlus}>+</span>
         </div>
     )
 }

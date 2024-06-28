@@ -47,6 +47,7 @@ const Product = ()=> {
                       </div>
 
                       <div className={classname['text-cnt']}>
+                        <p className={classname["new"]}>{prod.new? <span>NEW PRODUCT</span>:""}</p>
                         <h3>{prod.name}</h3>
                         <p className={classname['description']}>{prod.description}</p>
                         <p className={classname['price']}><span>$ {prod.price}</span></p>
@@ -90,17 +91,6 @@ const Product = ()=> {
                                 })}</>
                             </div>
 
-                            {/* <div className={classname['item']}>
-                                <>
-                                    {prod.includes.map((item)=>{
-                                        return(
-                                            <span>
-                                                {item.item}
-                                            </span>
-                                        )
-                                    })}
-                                </>
-                            </div> */}
 
                             </div>
                             

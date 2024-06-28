@@ -28,10 +28,10 @@
             column-gap: 7.8rem;
             padding-bottom: 10rem;
             .picture{
-                max-width: 50%;
+                width: 50%;
                 
                 picture{
-                    max-width: 100%;
+                    width: 100%;
                     img{
                         max-width: 100%;
                     }
@@ -41,6 +41,17 @@
             .text-cnt{
                 max-width: 50%;
                 padding-right: 10.3rem;
+
+                .new{
+                    padding-bottom: 1rem;
+                    span{
+                        color: var(--color-chokolate100);
+                        font-size: 12px;
+                        font-weight: 400;
+                        letter-spacing: 8.571px;
+                        text-transform: uppercase;
+                    }
+                }
     
                 h3{
                     max-width: 27.8125rem;
@@ -162,6 +173,191 @@
                     }
 
             
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-item-cnt{
+        padding-left: 5.8rem;
+        .item-cnt{    
+            .top-section{
+                column-gap: 5rem;
+                padding-bottom: 8rem;
+                .picture{
+                    width: 50%;
+                    height: 480px;
+                    picture{
+                        height: 100%;
+                        img{
+                            height: 100%;
+                        }
+                    }
+                }
+                .text-cnt{
+                    padding-right: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .main-item-cnt{
+        padding-left: 5rem;
+
+        .item-cnt{    
+            .top-section{
+                column-gap: 4rem;  
+                .text-cnt{
+                    padding-right: 1.8rem;                   
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-item-cnt{
+        padding-left: 5rem;
+
+        .item-cnt{    
+            .top-section{
+                column-gap: 4rem;  
+                .text-cnt{
+                    padding-right: 1.8rem;
+                    h3{
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+                .price{
+                    padding-bottom: 2rem;
+                }
+                }
+
+            }
+    
+            .bottom-section{
+                flex-direction: column;
+                
+                .features-cnt{
+                    width: 100%;
+                    padding-right: 2.4375rem;
+                }
+
+                .box{
+                    width: 100%;
+                    padding-top: 7.5rem;
+                    padding-bottom: 7rem;
+                    padding-right: 2.4rem;
+                    transform: translateX(-4%);
+                    display: flex;
+                    padding-left: 0px;
+
+                    h4{
+                        width: 52%;
+                        display: flex;
+                        text-align: left;
+                        padding-left: 2rem;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+// sss
+
+
+@media screen and (max-width: 768px) {
+    .main-item-cnt{
+        padding-left: 5rem;
+
+        .item-cnt{    
+            .top-section{
+                column-gap: 4rem;  
+                .text-cnt{
+                    padding-right: 1.8rem;
+                    h3{
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+                .price{
+                    padding-bottom: 2rem;
+                }
+                }
+
+            }
+    
+            .bottom-section{
+                flex-direction: column;
+                
+                .features-cnt{
+                    width: 100%;
+                    padding-right: 2.4375rem;
+                }
+
+                .box{
+                    width: 100%;
+                    padding-top: 7.5rem;
+                    padding-bottom: 7rem;
+                    padding-right: 2.4rem;
+                    transform: translateX(-4%);
+                    display: flex;
+                    padding-left: 0px;
+
+                    h4{
+                        width: 52%;
+                        display: flex;
+                        text-align: left;
+                        padding-left: 2rem;
+                        
+                    }
+
+                    .quantity-item-cnt{
+                        width: 48%;
+                        display: flex;
+                        justify-content: space-between;
+                        row-gap: 0.5rem;
+                        
+                        .includes-cnt{
+                            display: flex;
+                            flex-direction: column;
+    
+                            .quantity-item{
+                                display: flex;
+                                gap: 10px;
+    
+                                 .quantity{
+                                    display: flex;
+                                    align-items: center;
+                                    span{
+                                        color: var(--color-chokolate100);
+                                        font-size: 15px;
+                                        font-weight: 700;
+                                        line-height: 25px;
+                                    }
+                                 }
+                                 p{
+                                    display: flex;
+                                    align-items: center;
+                                    padding-left: 1.5rem;
+                                    color: var(--color-black100);
+                                    font-size: 15px;
+                                    font-weight: 400;
+                                    line-height: 25px;
+                                    opacity: 0.5;
+                                    text-transform: capitalize;
+                                 }
+                                 
+                            }
+                        }
+    
+                
+                    }
                 }
             }
         }

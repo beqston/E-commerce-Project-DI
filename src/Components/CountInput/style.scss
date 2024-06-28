@@ -9,7 +9,7 @@
     padding-left: 10px;
     padding-right: 10px;
 
-    .minus{
+    .decrease{
         cursor: pointer;
         color: var(--color-black100);
         text-align: center;
@@ -19,11 +19,11 @@
         text-transform: uppercase;
         opacity: 0.25;
     }
-        .minus:hover{
+        .decrease:hover{
             color: var(--color-chokolate100);
             opacity: 1;
         }
-    .plus{
+    .increase{
         cursor: pointer;
         color: var(--color-black100);
         text-align: center;
@@ -33,7 +33,7 @@
         text-transform: uppercase;
         opacity: 0.25;
     }
-    .plus:hover{
+    .increase:hover{
         color: var(--color-chokolate100);
         opacity: 1;
     }
