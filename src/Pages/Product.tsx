@@ -47,7 +47,7 @@ const Product = ()=> {
                       </div>
 
                       <div className={classname['text-cnt']}>
-                        <p className={classname["new"]}>{prod.new? <span>NEW PRODUCT</span>:""}</p>
+                        {prod.new? <p className={classname["new"]}><span>NEW PRODUCT</span></p>: null}
                         <h3>{prod.name}</h3>
                         <p className={classname['description']}>{prod.description}</p>
                         <p className={classname['price']}><span>$ {prod.price}</span></p>
