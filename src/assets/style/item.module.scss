@@ -219,59 +219,8 @@
     }
 }
 
+
 @media screen and (max-width: 768px) {
-    .main-item-cnt{
-        padding-left: 5rem;
-
-        .item-cnt{    
-            .top-section{
-                column-gap: 4rem;  
-                .text-cnt{
-                    padding-right: 1.8rem;
-                    h3{
-                        font-size: 28px;
-                        line-height: 32px;
-                    }
-                .price{
-                    padding-bottom: 2rem;
-                }
-                }
-
-            }
-    
-            .bottom-section{
-                flex-direction: column;
-                
-                .features-cnt{
-                    width: 100%;
-                    padding-right: 2.4375rem;
-                }
-
-                .box{
-                    width: 100%;
-                    padding-top: 7.5rem;
-                    padding-bottom: 7rem;
-                    padding-right: 2.4rem;
-                    transform: translateX(-4%);
-                    display: flex;
-                    padding-left: 0px;
-
-                    h4{
-                        width: 52%;
-                        display: flex;
-                        text-align: left;
-                        padding-left: 2rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// sss
-
-
-@media screen and (max-width: 700px) {
     .main-item-cnt{
         padding-left: 5rem;
 
@@ -362,3 +311,108 @@
         }
     }
 }
+
+
+@media screen and (max-width: 700px) {
+    .main-item-cnt{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    
+        .item-cnt{ 
+            padding-left: 1.5rem;   
+            .top-section{
+                width: 100%;
+                flex-direction: column; 
+                
+                .picture{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+                picture{
+                    width: 100%;
+                    img{
+                        width: 90%;
+                    }
+                }
+                .text-cnt{
+                    min-width: 100%;
+                    padding-top: 2rem;
+                    justify-content: start;
+                    h3{
+                        font-size: 28px;
+                        line-height: 32px;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .description{
+                        min-width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .main-item-cnt{
+        .item-cnt{    
+            .bottom-section{  
+                .box{
+                    padding-top: 5.5rem;
+                    padding-bottom: 4.8rem;
+                    padding-left: 2rem;
+                    flex-direction: column;
+
+                    h4{
+                        min-width: 100%;
+                        transform: translateX(-1%);
+                        padding-left: 0rem;      
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-item-cnt{
+        .item-cnt{ 
+            .top-section{
+                .text-cnt{
+                    h3{
+                        max-width: 87%;
+                        font-size: 28px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                    }
+                }
+            }   
+            .bottom-section{  
+
+                .features-cnt{
+                    h4{
+                        font-size: 1.5rem;
+                        line-height: 36px; 
+                        letter-spacing: 0.857px;
+                    }
+                }
+
+                .box{
+                    padding-top: 5.5rem;
+                    padding-bottom: 4.8rem;
+                    padding-left: 1.5rem;
+                    flex-direction: column;
+
+                    h4{
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                        letter-spacing: 0.857px;     
+                    }
+                }
+            }
+        }
+    }
+}
+
