@@ -103,6 +103,47 @@ const Product = ()=> {
                 )
             })}
             </>
+
+            <div className={classname['item-img-cnt']}>
+                {prods?.filter((prod: ProdID)=> prod.id === productID).map((prod)=> {
+                    return(
+                        <div className={classname['gallery-img']}>
+
+                            <div className={classname['firs-second-cnt']}>
+
+                                <div className={classname['first-img']}>
+                                    <picture>
+                                        <img src={`http://localhost:5173/${prod.gallery.first.desktop}`} alt="photo" />
+                                        <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.gallery.first.tablet}`}/>
+                                        <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.gallery.first.mobile}`}/>
+                                    </picture> 
+                                </div>
+
+                                <div className={classname['second-img']}>
+                                    <picture>
+                                        <img src={`http://localhost:5173/${prod.gallery.second.desktop}`} alt="photo" />
+                                        <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.gallery.second.tablet}`}/>
+                                        <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.gallery.second.mobile}`}/>
+                                    </picture> 
+                                </div>
+
+                            </div>
+
+                            
+
+                            <div className={classname['third-img']}>
+                                <picture>
+                                    <img src={`http://localhost:5173/${prod.gallery.third.desktop}`} alt="photo" />
+                                    <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.gallery.third.tablet}`}/>
+                                    <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.gallery.third.mobile}`}/>
+                                </picture> 
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+
+            <section></section>
         </main>
       
     )

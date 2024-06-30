@@ -59,10 +59,10 @@ const Products = ()=> {
 
                         <div className={classname.picture}>
                             <picture>
-                                    <img src={`http://localhost:5173/${prod.categoryImage.desktop}`} alt="photo" />
-                                    <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.categoryImage.tablet}`}/>
-                                    <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.categoryImage.mobile}`}/>
-                                </picture>
+                                <img src={`http://localhost:5173/${prod.categoryImage.desktop}`} alt="photo" />
+                                <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.categoryImage.tablet}`}/>
+                                <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.categoryImage.mobile}`}/>
+                            </picture>
                         </div>
 
                         <div className={classname['text-cnt']}>
