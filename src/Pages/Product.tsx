@@ -1,9 +1,12 @@
 import classname from "../assets/style/item.module.scss"
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ProductsType } from "../Types/ProductsTypes";
 import CountInput from "../Components/CountInput/CountInput";
 import AddToCard from "../Components/AddToCard/AddToCard";
+import ButtonChokolate from "../Components/button/ButtonChokolate";
+import ProductSection from "../Components/ProductsSection/ProductSection";
+import MainBottom from "../Components/MainBottom/MainBottom";
 
 interface ProdID{
     id: number | string | undefined
@@ -12,14 +15,12 @@ interface ProdID{
 const Product = ()=> {
     const navigate = useNavigate()
     const {productID} = useParams()
-    console.log(productID)
     const [prods, setProds] = useState<null | ProductsType[]>(null)
 
 
     const getData = async ()=> {
         const res = await fetch('http://localhost:3000/products')
         const data = await res.json()
-        console.log(data)
         setProds(data)
     }
 
@@ -27,7 +28,10 @@ const Product = ()=> {
         getData()
     }, [])
 
+    
+
     return(
+        <>
         <main className={classname['main-item-cnt']}>
             <p className={classname['back']} onClick={()=> {navigate(-1)}}>Go Back</p>
             
@@ -143,8 +147,50 @@ const Product = ()=> {
                 })}
             </div>
 
-            <section></section>
+            <section className={classname['others-products-cnt']}>
+                <h4>you may also like</h4>
+
+                {prods?.filter((prod: ProdID)=> prod.id === productID).map((prod)=> {
+                    return(
+                        <div className={classname['others-product-cnt']}>
+
+                            {prod.others.map((prod)=> {
+                                return(
+                                    <div className={classname['others-product']}>
+
+                                        <div className={classname['item-img']}>
+                                            <picture>
+                                                <img src={`http://localhost:5173/${prod.image.desktop}`} alt="photo" />
+                                                <source media="(min-width: 768px) and (max-width: 1024px)" srcSet={`http://localhost:5173/${prod.image.tablet}`}/>
+                                                <source media="(max-width: 768px)" srcSet={`http://localhost:5173/${prod.image.mobile}`}/>
+                                            </picture> 
+                                        </div>
+
+                                        <h3>{prod.name}</h3>
+
+                                        
+
+                                      
+                                        <ButtonChokolate />
+                                    </div>  
+                                )
+                            })}
+                            
+
+                        </div>
+                    )
+                })}
+
+                
+            </section>
+              
         </main>
+        <ProductSection />
+        <div style={{paddingBottom:"2rem"}}></div>
+        <MainBottom />
+
+        </>
+       
       
     )
 }

@@ -1,8 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NotFound = ()=> {
+    const navigate =  useNavigate()
     return(
         <div>
+            <h3 style={{
+                fontSize: "2rem",
+                cursor: "pointer",
+                opacity: "0.8",
+                paddingTop: "2rem"
+            }} 
+            onClick={()=> navigate(-1)}>
+                Go To Back
+            </h3>
+
             <h2 style={{
             width: '100%',
             fontSize:'84px',
