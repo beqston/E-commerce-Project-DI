@@ -1,6 +1,10 @@
+
+
 const Checkout = ()=> {
     return(
-        <div>chekout</div>
+        <div>
+          chekaut
+        </div>
     )
 }
 

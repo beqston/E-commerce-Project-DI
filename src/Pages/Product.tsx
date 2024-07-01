@@ -94,12 +94,8 @@ const Product = ()=> {
                                     )
                                 })}</>
                             </div>
-
-
                             </div>
                             
-                            
-
                         </div>
                       </section>
 
@@ -167,20 +163,15 @@ const Product = ()=> {
                                         </div>
 
                                         <h3>{prod.name}</h3>
-
-                                        
-
-                                      
                                         <ButtonChokolate />
+                                        
                                     </div>  
                                 )
                             })}
-                            
 
                         </div>
                     )
                 })}
-
                 
             </section>
               
