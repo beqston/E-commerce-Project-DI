@@ -163,7 +163,8 @@ const Product = ()=> {
                                         </div>
 
                                         <h3>{prod.name}</h3>
-                                        <ButtonChokolate />
+
+                                        <Link to={`/products/${prods?.find((item)=> item.slug  === prod.slug)?.category}/${prods?.find((item)=> item.slug  === prod.slug)?.id}`}><ButtonChokolate /></Link>
                                         
                                     </div>  
                                 )

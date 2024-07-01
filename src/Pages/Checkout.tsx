@@ -1,9 +1,13 @@
+import Input from "../Components/Input/Input";
 
 
 const Checkout = ()=> {
     return(
         <div>
-          chekaut
+          <Input 
+          type="text"
+          
+          />
         </div>
     )
 }
