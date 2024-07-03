@@ -7,7 +7,14 @@ import ButtonChokolate from "../Components/button/ButtonChokolate";
 import ProductSection from "../Components/ProductsSection/ProductSection";
 import MainBottom from "../Components/MainBottom/MainBottom";
 
+
+type Revers = {
+    isRevers: boolean
+}
+
 const Products = ()=> {
+
+
 
     const {productsName} = useParams()
     
@@ -47,14 +54,15 @@ const Products = ()=> {
     
         
         <main className={classname.pages}>
-        {prods?.filter((prod)=> prod.category === productsName).map((prod)=>{
+        {prods?.filter((prod)=> prod.category === productsName).map((prod, index)=>{
+        
             return(
 
-                <section className={classname['products']} key={prod.id}>
+                <section className={classname["products"]} key={prod.id}>
                   
                  <article>
                   
-                    <div className={classname['products-img']}>
+                    <div className={classname[`${index % 2 === 0 ? "products-img": "reverse"}`]}>
 
                         <div className={classname.picture}>
                             <picture>

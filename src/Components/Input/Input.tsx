@@ -1,7 +1,7 @@
 interface PrpsInput{
     type: Text,
     classname: Text,
-    i
+
 }
 const Input = ()=> {
     return(
