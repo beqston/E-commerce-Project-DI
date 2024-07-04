@@ -8,9 +8,6 @@ import ProductSection from "../Components/ProductsSection/ProductSection";
 import MainBottom from "../Components/MainBottom/MainBottom";
 
 
-type Revers = {
-    isRevers: boolean
-}
 
 const Products = ()=> {
 
