@@ -24,6 +24,14 @@ const Checkout = ()=> {
               <button>the modal</button>
             </form>npx
           </Modal>
+
+          <Input
+          name="Name"
+          type="text"
+          id="text"
+          />
+
+
         </div>
       );
 }

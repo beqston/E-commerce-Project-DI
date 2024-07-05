@@ -1,0 +1,34 @@
+.input-cnt{
+    display: flex;
+    position: relative;
+}
+
+.input-cnt label{
+position: absolute;
+left: 20px;
+}
+label{
+    font-size: 12px;
+    top: 4px;
+}
+.span-red{
+    position: absolute;
+    left: 140px;
+    font-size: 12px;
+    top: 4px;
+    color: red;
+}
+input{
+    margin: 20px;
+}
+.none{
+    display: none;
+}
+
+.black{
+    border: 1px solid black;
+}
+
+.red{
+    border: 1px solid red;
+}
