@@ -8,6 +8,7 @@ interface PropsType {
     type?: string,
     name?: string,
     id?: string,
+    placeholder?: string,
 
 }
 
@@ -28,7 +29,12 @@ const Input = (props: PropsType)=> {
         <div className="input-cnt">
             <label htmlFor={props.id}>{props.name}</label>
             <span className={isError? "span-red": "none"}>wrong</span>
-            <input onChange={handlChange} className={isError? "red": "black"} type={props.type} />
+            <input 
+                onChange={handlChange} 
+                className={isError? "red-input": "black-input"} 
+                type={props.type}
+                placeholder={props.placeholder} 
+            />
         </div>
     )
 }

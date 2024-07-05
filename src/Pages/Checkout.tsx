@@ -29,6 +29,8 @@ const Checkout = ()=> {
           name="Name"
           type="text"
           id="text"
+          placeholder="Enter Name"
+
           />
 
 

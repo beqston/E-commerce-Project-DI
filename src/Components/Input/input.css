@@ -5,7 +5,7 @@
 
 .input-cnt label{
 position: absolute;
-left: 20px;
+left: 24px;
 }
 label{
     font-size: 12px;
@@ -13,22 +13,43 @@ label{
 }
 .span-red{
     position: absolute;
-    left: 140px;
+    left: 280px;
     font-size: 12px;
     top: 4px;
     color: red;
 }
 input{
     margin: 20px;
+    width: 309px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FFF;
+    padding: 18px 24px;
+    font-size: 14px;
+}
+.red-input:focus{
+    outline: red;
+    border: 1px solid red;
+}
+input::placeholder{
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    opacity: 0.4;
+    padding: 18px 24px;
 }
 .none{
     display: none;
 }
 
-.black{
-    border: 1px solid black;
+.black-input{
+    outline: #CFCFCF;
+    border: 1px solid #CFCFCF;
 }
 
-.red{
+.red-input{
     border: 1px solid red;
+    outline: red;
 }
