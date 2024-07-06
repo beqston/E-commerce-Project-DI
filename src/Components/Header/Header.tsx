@@ -6,9 +6,13 @@ import Audiofile from "../../assets/Photos/HeaderPhoto/audiophile.svg";
 import burgicon from "../../assets/Photos/burgMenu/burgIcon.png";
 import ProductSection from "../ProductsSection/ProductSection";
 
+import Modal from 'react-modal';
+
 const Header = () => {
   const [burgIcon, setBurgIcon] = useState("burg-menu-icon");
   const [menuList, setMenutList] = useState("none");
+
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const handlBurgIcon = () => {
     setBurgIcon("none");
@@ -62,7 +66,25 @@ const Header = () => {
 
         <div className={classname["header-right-container"]}>
           <div className={classname["card-img"]}>
-            <Link to={"/products/chekout"}><img src={Card} alt="Card" /></Link>
+            <img onClick={()=> setIsOpen(true)} src={Card} alt="Card" />
+            <Modal
+            onRequestClose={()=>setIsOpen(false)}
+            shouldCloseOnEsc={true}
+            isOpen={modalIsOpen}
+            onAfterOpen={()=> document.body.style.overflow === "hidden"}
+            onAfterClose={()=> document.body.style.overflow === "auto"}
+          >
+
+            <button onClick={()=> {setIsOpen(false)}}>close</button>
+            <div>I am a modal</div>
+            <form>
+              <input />
+              <button>tab navigation</button>
+              <button>stays</button>
+              <button>inside</button>
+              <button>the modal</button>
+            </form>npx
+          </Modal>
           </div>
         </div>
       </div>

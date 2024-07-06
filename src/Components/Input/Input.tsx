@@ -27,8 +27,8 @@ const Input = (props: PropsType)=> {
 
     return(
         <div className="input-cnt">
-            <label htmlFor={props.id}>{props.name}</label>
-            <span className={isError? "span-red": "none"}>wrong</span>
+            <label className={isError? "error": "none"} htmlFor={props.id}>{props.name}</label>
+            <span className={isError? "span-red error": "none"}>wrong</span>
             <input 
                 onChange={handlChange} 
                 className={isError? "red-input": "black-input"} 

@@ -16,6 +16,8 @@ label{
     left: 280px;
     font-size: 12px;
     top: 4px;
+}
+.error{
     color: red;
 }
 input{

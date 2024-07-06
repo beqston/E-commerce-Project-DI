@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Input from "../Components/Input/Input";
-
 import Modal from 'react-modal';
 
 
@@ -11,7 +10,11 @@ const Checkout = ()=> {
         <div>
           <button onClick={()=> {setIsOpen(true)}}>Open Modal</button>
           <Modal
+            onRequestClose={()=>setIsOpen(false)}
+            shouldCloseOnEsc={true}
             isOpen={modalIsOpen}
+            onAfterOpen={()=> document.body.style.overflow === "hidden"}
+            onAfterClose={()=> document.body.style.overflow === "auto"}
           >
 
             <button onClick={()=> {setIsOpen(false)}}>close</button>
