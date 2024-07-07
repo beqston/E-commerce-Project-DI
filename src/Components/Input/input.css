@@ -20,7 +20,7 @@ label{
 .error{
     color: red;
 }
-input{
+.text-input{
     margin: 20px;
     width: 309px;
     height: 56px;
@@ -29,12 +29,14 @@ input{
     background: #FFF;
     padding: 18px 24px;
     font-size: 14px;
+    outline: #CFCFCF;
+    border: 1px solid #CFCFCF;
 }
 .red-input:focus{
     outline: red;
     border: 1px solid red;
 }
-input::placeholder{
+.text-input::placeholder{
     color: #000;
     font-size: 14px;
     font-weight: 700;
@@ -46,12 +48,28 @@ input::placeholder{
     display: none;
 }
 
-.black-input{
-    outline: #CFCFCF;
-    border: 1px solid #CFCFCF;
-}
-
 .red-input{
     border: 1px solid red;
     outline: red;
+}
+.radio-label{
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+}
+.radio-input-cnt{
+    width: 310px;
+    border-radius: 8px;
+    border: 1px solid #CFCFCF;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+.radio-input{
+    accent-color: #D87D4A;
+    width: 20px;
+    height: 20px;
+    margin: 19px 16px;
 }

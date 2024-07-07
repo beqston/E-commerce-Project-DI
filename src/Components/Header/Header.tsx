@@ -69,10 +69,10 @@ const Header = () => {
             <img onClick={()=> setIsOpen(true)} src={Card} alt="Card" />
             <Modal
             onRequestClose={()=>setIsOpen(false)}
-            shouldCloseOnEsc={true}
             isOpen={modalIsOpen}
-            onAfterOpen={()=> document.body.style.overflow === "hidden"}
-            onAfterClose={()=> document.body.style.overflow === "auto"}
+            shouldCloseOnOverlayClick={true}
+            onAfterOpen={()=> document.body.style.overflow = "hidden"}
+            onAfterClose={()=> document.body.style.overflow = "auto"}
           >
 
             <button onClick={()=> {setIsOpen(false)}}>close</button>
@@ -85,6 +85,7 @@ const Header = () => {
               <button>the modal</button>
             </form>npx
           </Modal>
+
           </div>
         </div>
       </div>

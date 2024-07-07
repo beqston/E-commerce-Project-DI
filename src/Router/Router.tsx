@@ -14,7 +14,7 @@ const RouterComponent = ()=> {
                 <Route path="/"  element={<Home />} />
                 <Route path="/products/:productsName"  element={<Products />} />
                 <Route path="/products/:productsName/:productID"  element={<Product />} />
-                <Route path="/products/chekout" element={<Checkout />} />
+                <Route path="/chekout" element={<Checkout />} />
                 <Route path="*"  element={<NotFound />} />
             </Route>
         </Routes>

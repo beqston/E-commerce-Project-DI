@@ -1,25 +1,28 @@
 import { useState } from "react";
 import "./style.scss"
+
+
 const CountInput = ()=> {
-    const [count, setCount] = useState<number>(1);
 
-
+    const [num, setNum] = useState<number>(1);
+    
     const handlClickMinus = ()=> {
-        if(count === 0){
-            setCount(0)
+        if(num === 0){
+            setNum(0);
+            
         }
         else{
-            setCount(count - 1)
+            setNum(num - 1)
         }
     }
     const handlClickPlus = ()=> {
-        setCount(count + 1)
+        setNum(num + 1)
     }
 
     return(
         <div className="countinput-cnt">
             <span className="decrease"  onClick={handlClickMinus}>-</span>
-            <span className="count">{count}</span>
+            <span className="count">{num}</span>
             <span className="increase" onClick={handlClickPlus}>+</span>
         </div>
     )

@@ -18,25 +18,44 @@ const Input = (props: PropsType)=> {
 
 
     const handlChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
-        if(e.target.value.length < 3){
-            setIsError(true)
-        }else {
-            setIsError(false)
-        }
+if(props.type === "text"){
+    if(e.target.value.length < 3){
+        setIsError(true)
+    }else {
+        setIsError(false)
+    }
+    return
+}
     }
 
+    if(props.type === "text"){
+        return(
+            <div className="input-cnt">
+                <label className={isError? "error": "none"} htmlFor={props.id}>{props.name}</label>
+                <span className={isError? "span-red error": "none"}>wrong</span>
+                <input
+                    onChange={handlChange} 
+                    className={isError? "red-input": "text-input"} 
+                    placeholder={props.placeholder} 
+                />
+            </div>
+        )
+    }
     return(
-        <div className="input-cnt">
-            <label className={isError? "error": "none"} htmlFor={props.id}>{props.name}</label>
-            <span className={isError? "span-red error": "none"}>wrong</span>
+        <div className="radio-input-cnt">
+
             <input 
                 onChange={handlChange} 
-                className={isError? "red-input": "black-input"} 
-                type={props.type}
+                className="radio-input" 
+                type="radio"
                 placeholder={props.placeholder} 
             />
+
+            <label className="radio-label" htmlFor={props.id}>{props.name}</label>
         </div>
     )
+
+
 }
 
 export default Input;

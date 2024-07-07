@@ -26,8 +26,7 @@ const Product = ()=> {
 
     useEffect(()=> {
         getData()
-    }, [])
-
+    }, []);
     
 
     return(
@@ -57,7 +56,7 @@ const Product = ()=> {
                         <p className={classname['price']}><span>$ {prod.price}</span></p>
 
                         <div className={classname['count-addcard']}>
-                            <CountInput />
+                            <CountInput  />
                             <AddToCard />
                         </div>
 

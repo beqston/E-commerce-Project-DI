@@ -29,8 +29,8 @@ const Checkout = ()=> {
           </Modal>
 
           <Input
-          name="Name"
-          type="text"
+          name="cart"
+          type="radio"
           id="text"
           placeholder="Enter Name"
 
