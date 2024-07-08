@@ -147,6 +147,9 @@
 }
 
 @media screen and (max-width: 710px) {
+    header{
+        min-width: 100%;
+    }
     .burg-menu-container{
         nav{
             top: 130px;
@@ -156,12 +159,15 @@
 
 @media screen and (max-width: 440px){
     .header-left-container{
+        
         .img{
             translate: 4rem;
         }
     }
 
     .header-right-container{
+        min-width: 100%;
+        width: 100%;
         .card-img{
            transform: translateX(3rem);
         }
@@ -181,7 +187,9 @@
 }
 
 @media screen and (max-width: 340px) {
+
     .header-left-container{
+        width: 100%;
         .img{
             translate: 2rem;
         }

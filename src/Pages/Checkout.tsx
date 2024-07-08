@@ -1,13 +1,98 @@
+import "../assets/style/chekout.scss"
 import { useState } from "react";
 import Input from "../Components/Input/Input";
 import Modal from 'react-modal';
+import { useNavigate } from "react-router-dom";
 
 
 
 const Checkout = ()=> {
     const [modalIsOpen, setIsOpen] = useState(false);
+    const navigator = useNavigate()
     return (
-        <div>
+        <div className="chekout-cnt">
+
+          <p onClick={()=> {navigator(-1)}} className="chekout-back">
+           Go Back
+          </p>
+
+        <main className="chekout-main-cnt">
+
+          <h2 className="h2-heading">CHECKOUT</h2>
+
+          <section className="billing-section">
+
+            <h5 className="title">Billing Details</h5>
+
+            <div className="section1-cnt">
+
+              <Input
+                name="Name"
+                type="text"
+                placeholder="Alexei Ward"
+                id="name"
+              />
+
+              <Input
+                name="Email Address"
+                type="email"
+                placeholder="alexei@mail.com"
+                id="adress"
+              />
+
+           
+
+            </div>
+            
+          </section>
+
+          <section className="shiping-section">
+
+            <h5 className="title">shipping info</h5>
+
+            <div className="section2-cnt">
+
+            <Input
+              name="Address"
+              type="text"
+              placeholder="1137 Williams Avenue"
+              id="address"
+            />
+
+            <div className="section2-inputs3">
+              <Input
+                name="ZIP Code"
+                type="number"
+                placeholder="10001"
+                id="zip"
+              />
+              
+              <Input
+                name="City"
+                type="text"
+                placeholder="New York"
+                id="city"
+              />
+
+              <Input
+                name="Country"
+                type="text"
+                placeholder="United States"
+                id="country"
+              />
+            </div>
+
+            </div>
+
+          </section>
+
+
+        </main>
+
+        <aside>
+
+        </aside>
+
           <button onClick={()=> {setIsOpen(true)}}>Open Modal</button>
           <Modal
             onRequestClose={()=>setIsOpen(false)}
@@ -28,13 +113,6 @@ const Checkout = ()=> {
             </form>npx
           </Modal>
 
-          <Input
-          name="cart"
-          type="radio"
-          id="text"
-          placeholder="Enter Name"
-
-          />
 
 
         </div>

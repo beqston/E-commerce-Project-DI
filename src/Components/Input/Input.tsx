@@ -28,15 +28,16 @@ if(props.type === "text"){
 }
     }
 
-    if(props.type === "text"){
+    if(props.type === "text"|| "email" || "number" ){
         return(
             <div className="input-cnt">
-                <label className={isError? "error": "none"} htmlFor={props.id}>{props.name}</label>
+                <label className={isError? "label-error error": "label-text"} htmlFor={props.id}>{props.name}</label>
                 <span className={isError? "span-red error": "none"}>wrong</span>
                 <input
                     onChange={handlChange} 
                     className={isError? "red-input": "text-input"} 
                     placeholder={props.placeholder} 
+                    id={props.id}
                 />
             </div>
         )
@@ -48,7 +49,8 @@ if(props.type === "text"){
                 onChange={handlChange} 
                 className="radio-input" 
                 type="radio"
-                placeholder={props.placeholder} 
+                placeholder={props.placeholder}
+                id={props.id} 
             />
 
             <label className="radio-label" htmlFor={props.id}>{props.name}</label>

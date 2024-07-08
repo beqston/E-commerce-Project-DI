@@ -1,0 +1,75 @@
+.chekout-cnt{
+    width: 100%;
+    background-color: var(--color-grey10);
+    padding-left: 11.5%;
+
+    .chekout-back{
+        opacity: 0.5;
+        color: #000;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px;
+        padding-bottom: 2.5rem;
+        padding-top: 4.4rem;
+        cursor: pointer;
+    }
+
+    .chekout-main-cnt{
+        max-width: 730px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 3.3%;
+        padding-right: 3.3%;
+        background-color: var(--color-white100);
+        
+        .h2-heading{
+            color: var(--color-black100);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 36px; 
+            letter-spacing: 1.143px;
+            text-transform: uppercase;
+            padding-bottom: 2.5rem;
+            padding-top: 3rem;
+            
+        }
+
+        .title{
+            color: var(--color-chokolate100);
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 25px; 
+            letter-spacing: 0.929px;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+        }
+
+        .billing-section{
+            width: 100%;
+
+            .section1-cnt{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .shiping-section{
+            width: 100%;
+            .section2-cnt{
+                width: 100%;
+                display: grid;
+                gap: 1rem;
+
+                .section2-inputs3{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                }
+                
+            }
+        }
+
+
+    }
+}
