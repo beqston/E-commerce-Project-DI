@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { ContextType, useContext, useState } from "react";
 import "./style.scss"
+import { Cartcontext } from "../../Context/Context";
 
 
 const CountInput = ()=> {
 
-    const [num, setNum] = useState<number>(1);
+
+    const {num, setNum} = useContext<any>(Cartcontext);
     
     const handlClickMinus = ()=> {
         if(num === 0){

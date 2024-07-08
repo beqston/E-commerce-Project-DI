@@ -57,7 +57,10 @@ const Product = ()=> {
 
                         <div className={classname['count-addcard']}>
                             <CountInput  />
-                            <AddToCard />
+                            <AddToCard 
+                                price={prod.price} 
+                                name={prod.name}
+                            />
                         </div>
 
                       </div>

@@ -75,7 +75,7 @@ const Header = () => {
             onAfterClose={()=> document.body.style.overflow = "auto"}
           >
 
-            <button onClick={()=> {setIsOpen(false)}}>close</button>
+            {/* <button onClick={()=> {setIsOpen(false)}}>close</button>
             <div>I am a modal</div>
             <form>
               <input />
@@ -83,7 +83,8 @@ const Header = () => {
               <button>stays</button>
               <button>inside</button>
               <button>the modal</button>
-            </form>npx
+            </form>npx */}
+            
           </Modal>
 
           </div>

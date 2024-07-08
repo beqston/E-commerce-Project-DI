@@ -1,14 +1,16 @@
 import "../assets/style/chekout.scss"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Input from "../Components/Input/Input";
 import Modal from 'react-modal';
 import { useNavigate } from "react-router-dom";
+import { Cartcontext } from "../Context/Context";
 
 
 
 const Checkout = ()=> {
     const [modalIsOpen, setIsOpen] = useState(false);
-    const navigator = useNavigate()
+    const navigator = useNavigate();
+    const {prodArray, setProdArray} = useContext(Cartcontext);
     return (
         <div className="chekout-cnt">
 
@@ -111,6 +113,8 @@ const Checkout = ()=> {
               <button>inside</button>
               <button>the modal</button>
             </form>npx
+
+            
           </Modal>
 
 
