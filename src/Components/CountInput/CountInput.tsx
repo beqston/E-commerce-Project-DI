@@ -6,7 +6,7 @@ import { Cartcontext } from "../../Context/Context";
 const CountInput = ()=> {
 
 
-    const {num, setNum} = useContext<any>(Cartcontext);
+    const {num, setNum} = useContext(Cartcontext) as ContextType;
     
     const handlClickMinus = ()=> {
         if(num === 0){

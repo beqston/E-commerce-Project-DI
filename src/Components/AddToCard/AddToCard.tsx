@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./style.scss"
-import { Cartcontext } from "../../Context/Context";
+import { Cartcontext, ContextType } from "../../Context/Context";
 
 interface Props{
     price: number;
@@ -8,17 +8,13 @@ interface Props{
 }
 
 const AddToCard = (props: Props)=> {
-    const {prodArray, setProdArray, num, setNum} = useContext(Cartcontext);
+    const {prodArray, setProdArray, num} = useContext(Cartcontext) as ContextType;
 
     const handlClick = ()=> {
-        if(prodArray){
-
-        }
-        setProdArray([...prodArray, {name: props.name, price: props.price * num, quantiti: num}]);
-        setNum(1)
+        setProdArray([...prodArray, {name: props.name, price: props.price * num, quantiti: num}])
     }
     return(
-        <button onClick={handlClick} className="btn-addtocard">
+        <button className="btn-addtocard">
             ADD TO CART
         </button>
     )

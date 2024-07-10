@@ -9,26 +9,46 @@ interface PropsType {
     name?: string,
     id?: string,
     placeholder?: string,
-
+    radioName?: string,
+    checked?: boolean
+    onChange?: ()=> void
 }
 
 const Input = (props: PropsType)=> {
-    const [isError, setIsError] = useState(false)
-
+    const [isError, setIsError] = useState(false);
 
 
     const handlChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
-if(props.type === "text"){
-    if(e.target.value.length < 3){
-        setIsError(true)
-    }else {
-        setIsError(false)
-    }
-    return
-}
+        if(props.type === "text"){
+            if(e.target.value.length < 3){
+                setIsError(true)
+            }else {
+                setIsError(false)
+            }
+            
+        }
     }
 
-    if(props.type === "text"|| "email" || "number" ){
+
+    if(props.type === "radio"){
+        return(
+            <div className="radio-input-cnt">
+    
+                <input 
+                    className="radio-input" 
+                    type="radio"
+                    placeholder={props.placeholder}
+                    id={props.id}
+                    name={props.name}                     
+                    {...props}
+                />
+    
+                <label className="radio-label" htmlFor={props.id}>{props.radioName}</label>
+            </div>
+        )
+    }
+
+    else{
         return(
             <div className="input-cnt">
                 <label className={isError? "label-error error": "label-text"} htmlFor={props.id}>{props.name}</label>
@@ -38,24 +58,13 @@ if(props.type === "text"){
                     className={isError? "red-input": "text-input"} 
                     placeholder={props.placeholder} 
                     id={props.id}
+                    {...props}
                 />
             </div>
         )
     }
-    return(
-        <div className="radio-input-cnt">
 
-            <input 
-                onChange={handlChange} 
-                className="radio-input" 
-                type="radio"
-                placeholder={props.placeholder}
-                id={props.id} 
-            />
 
-            <label className="radio-label" htmlFor={props.id}>{props.name}</label>
-        </div>
-    )
 
 
 }

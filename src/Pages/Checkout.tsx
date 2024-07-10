@@ -4,6 +4,7 @@ import Input from "../Components/Input/Input";
 import Modal from 'react-modal';
 import { useNavigate } from "react-router-dom";
 import { Cartcontext } from "../Context/Context";
+import shapeImg from "../assets/Photos/Checkout/Shape.svg"
 
 
 
@@ -11,6 +12,8 @@ const Checkout = ()=> {
     const [modalIsOpen, setIsOpen] = useState(false);
     const navigator = useNavigate();
     const {prodArray, setProdArray} = useContext(Cartcontext);
+
+    const [paymentMethod, setPaymentMethod] = useState<"e-money" | "cash">("e-money");
     return (
         <div className="chekout-cnt">
 
@@ -87,6 +90,80 @@ const Checkout = ()=> {
             </div>
 
           </section>
+
+          <section className="payment-method-cnt">
+
+            <h5 className="title">payment details</h5>
+
+            <div className="section3-cnt">
+              <p>Payment Method</p>
+
+              <div className="payment-input-cnt">
+              <Input
+                name="payment-method"
+                type="radio"
+                id="cash"
+                radioName="e-Money"
+                checked={paymentMethod === "e-money"}
+                onChange={()=> setPaymentMethod("e-money")}
+              />
+
+              <Input
+                name="payment-method"
+                type="radio"
+                id="pay"
+                radioName="Cash on Delivery"
+                checked={paymentMethod === "cash"}
+                onChange={()=> setPaymentMethod("cash")}
+              />
+              </div>
+      
+            </div>
+
+          </section>
+
+          <section className="checkout-bottom-cnt">
+
+          {paymentMethod === "cash"? 
+          <div className="chekout-bottom-text-cnt">
+          
+          <div className="checkout-botom-left">
+                <img src={shapeImg} alt="Image" />
+              </div>
+
+              <div className="checkout-botom-rigth">
+                <p>
+                  The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. 
+                  Just make sure your address is correct so that your order will not be cancelled.
+                </p>
+              </div>
+              </div>: null}
+
+           {
+            paymentMethod === "e-money"?    <div className="chekout-bottom-input-cnt">
+
+            <Input
+              name="e-Money Number"
+              type="number"
+              placeholder="238521993"
+              id="e-money-number"
+            />
+
+            <Input
+              name="e-Money PIN"
+              type="number"
+              placeholder="7891"
+              id="e-money-pin"
+            />
+
+          </div>: null
+           }
+
+
+
+          </section>
+
+          
 
 
         </main>

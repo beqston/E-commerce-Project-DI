@@ -82,6 +82,7 @@
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.25px;
+    cursor: pointer;
 }
 .radio-input-cnt{
     width: 310px;
@@ -90,6 +91,8 @@
     background: #FFF;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .radio-input{
@@ -97,4 +100,9 @@
     width: 20px;
     height: 20px;
     margin: 19px 16px;
+    cursor: pointer;
+}
+
+.radio-input-cnt:hover{
+    border: 1px solid #D87D4A;
 }

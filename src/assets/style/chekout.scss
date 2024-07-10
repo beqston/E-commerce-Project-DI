@@ -69,5 +69,49 @@
                 
             }
         }
+        .payment-method-cnt{
+            width: 100%;
+
+            .section3-cnt{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                p{
+                    color: var(--color-black100);
+                    font-size: 12px;
+                    font-weight: 700;
+                    letter-spacing: -0.214px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .checkout-bottom-cnt{
+            width: 100%;
+
+            .chekout-bottom-text-cnt{
+                width: 100%;
+                display: flex;
+                padding-top: 24px;
+                column-gap: 2rem;
+                padding-right: 10px;
+               .checkout-botom-rigth{
+                p{
+                    opacity: 0.5;
+                    color: #000;
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 25px;
+                }
+               }
+            }
+
+            .chekout-bottom-input-cnt{
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1rem;
+                padding-right: 10px;
+            }
+        }
     }
 }
