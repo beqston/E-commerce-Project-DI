@@ -103,6 +103,11 @@
     cursor: pointer;
 }
 
+
 .radio-input-cnt:hover{
-    border: 1px solid #D87D4A;
+    border: 1px solid var( --color-chokolate100);
+}
+
+.radio-input-cnt:has(.radio-input:checked){
+    border-color: var(--color-chokolate100);
 }

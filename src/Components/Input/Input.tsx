@@ -1,26 +1,30 @@
-import { useState } from "react"
+import { ForwardedRef, forwardRef, HTMLAttributes, useState } from "react"
 import "./input.css"
 
 
 
 
-interface PropsType {
+export type PropsType = {
+    // onChange?: ()=> void
     type?: string,
     name?: string,
     id?: string,
     placeholder?: string,
     radioName?: string,
-    checked?: boolean
-    onChange?: ()=> void
-}
+    checked?: boolean,
+    title?: string,
+    isError?: boolean
+    
+} & HTMLAttributes<HTMLInputElement>
 
-const Input = (props: PropsType)=> {
+const Input = forwardRef((props: PropsType, ref: ForwardedRef<HTMLInputElement>)=> {
+
     const [isError, setIsError] = useState(false);
 
 
     const handlChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
         if(props.type === "text"){
-            if(e.target.value.length < 3){
+            if(e.target.value.length > 1 && e.target.value.length < 3){
                 setIsError(true)
             }else {
                 setIsError(false)
@@ -51,13 +55,15 @@ const Input = (props: PropsType)=> {
     else{
         return(
             <div className="input-cnt">
-                <label className={isError? "label-error error": "label-text"} htmlFor={props.id}>{props.name}</label>
-                <span className={isError? "span-red error": "none"}>wrong</span>
+                <label className={props.isError? "label-error error": "label-text"} htmlFor={props.id}>{props.title}</label>
+                <span className={props.isError? "span-red error": "none"}>wrong</span>
                 <input
-                    onChange={handlChange} 
-                    className={isError? "red-input": "text-input"} 
+                    // onChange={handlChange}
+                    className={props.isError? "red-input": "text-input"} 
                     placeholder={props.placeholder} 
                     id={props.id}
+                    ref={ref}
+                    
                     {...props}
                 />
             </div>
@@ -67,6 +73,6 @@ const Input = (props: PropsType)=> {
 
 
 
-}
+});
 
 export default Input;
