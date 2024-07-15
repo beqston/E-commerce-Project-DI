@@ -8,15 +8,28 @@ import shapeImg from "../assets/Photos/Checkout/Shape.svg"
 import { useForm } from "react-hook-form";
 
 
+type FormData = {
+  name: string,
+  email: string,
+  adress: string,
+  city: string,
+  country: string,
+  zipcode:  number,
+  moneynumber: number,
+  moneypin: number
+}
+
+
 
 const Checkout = ()=> {
 
-  const {register, handleSubmit, formState: {errors}}= useForm<PropsType>();
+  const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
   const OnSubmit =(data: PropsType)=> {
       console.log(data)
       console.log(register)
       console.log(handleSubmit)
+      data.accessKey === ""
   }
 
 
@@ -64,16 +77,17 @@ const Checkout = ()=> {
                   placeholder="alexei@mail.com"
                   id="adress"
 
-                  {...register("name", {
-                    required:{
-                      value:true,
-                      message: "Not Correct"
-                    }
+                  {...register("email", {
+                    required:true,
+                    pattern: {
+                      value:
+                        /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/g,
+                      message: "Please enter valid email",
+                    },
                   })}
-                  isError={Boolean(errors.name)}
+                  isError={Boolean(errors.email)}
                 />
 
-            
 
               </div>
               
@@ -91,13 +105,13 @@ const Checkout = ()=> {
                 placeholder="1137 Williams Avenue"
                 id="address"
 
-                {...register("name", {
+                {...register("adress", {
                   required:{
                     value:true,
                     message: "Not Correct"
                   }
                 })}
-                isError={Boolean(errors.name)}
+                isError={Boolean(errors.adress)}
               />
 
               <div className="section2-inputs3">
@@ -107,13 +121,13 @@ const Checkout = ()=> {
                   placeholder="10001"
                   id="zip"
 
-                  {...register("name", {
+                  {...register("zipcode", {
                     required:{
                       value:true,
                       message: "Not Correct"
                     }
                   })}
-                  isError={Boolean(errors.name)}
+                  isError={Boolean(errors.zipcode)}
                 />
                 
                 <Input
@@ -122,13 +136,13 @@ const Checkout = ()=> {
                   placeholder="New York"
                   id="city"
 
-                  {...register("name", {
+                  {...register("city", {
                     required:{
                       value:true,
                       message: "Not Correct"
                     }
                   })}
-                  isError={Boolean(errors.name)}
+                  isError={Boolean(errors.city)}
                 />
 
                 <Input
@@ -137,13 +151,13 @@ const Checkout = ()=> {
                   placeholder="United States"
                   id="country"
 
-                  {...register("name", {
+                  {...register("country", {
                     required:{
                       value:true,
                       message: "Not Correct"
                     }
                   })}
-                  isError={Boolean(errors.name)}
+                  isError={Boolean(errors.country)}
                 />
               </div>
 
@@ -203,17 +217,37 @@ const Checkout = ()=> {
               paymentMethod === "e-money"?    <div className="chekout-bottom-input-cnt">
 
               <Input
-                name="e-Money Number"
+                title="e-Money Number"
                 type="number"
                 placeholder="238521993"
                 id="e-money-number"
+
+                {...register("moneynumber", {
+                  required:{
+                    value:true,
+                    message: "Not Correct"
+                  }
+                })}
+                isError={Boolean(errors.moneynumber)}
+
+     
               />
 
               <Input
-                name="e-Money PIN"
+                title="e-Money PIN"
                 type="number"
                 placeholder="7891"
                 id="e-money-pin"
+
+                {...register("moneypin", {
+                  required:{
+                    value:true,
+                    message: "Not Correct"
+                  }
+                })}
+                isError={Boolean(errors.moneypin)}
+
+                
               />
 
             </div>: null
@@ -222,16 +256,21 @@ const Checkout = ()=> {
             </section>
 
           </main>
+          
+                
+              <aside>
 
-          <button type="submit">subm</button>
+                <h2>Summary</h2>
+
+                <button type="submit">subm</button>
+              </aside>
+
 
         </form> 
 
-        <aside>
 
-        </aside>
+          {/* <button className="sss" onClick={()=> {setIsOpen(true)}}>Open Modal</button> */}
 
-          <button onClick={()=> {setIsOpen(true)}}>Open Modal</button>
           <Modal
             onRequestClose={()=>setIsOpen(false)}
             shouldCloseOnEsc={true}

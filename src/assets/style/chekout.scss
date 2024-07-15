@@ -15,6 +15,8 @@
     }
     
     form{
+        display: flex;
+        column-gap: 10%;
         .chekout-main-cnt{
             max-width: 730px;
             display: flex;
@@ -22,6 +24,7 @@
             padding-left: 3.3%;
             padding-right: 3.3%;
             background-color: var(--color-white100);
+            
             
             .h2-heading{
                 color: var(--color-black100);
@@ -116,4 +119,5 @@
             }
         }
     }
+
 }

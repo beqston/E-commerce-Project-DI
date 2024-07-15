@@ -59,6 +59,19 @@
     opacity: 0.4;
     padding: 18px 0px;
 }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+    appearance: initial;
+  -moz-appearance: textfield;
+}
 .none{
     display: none;
 }
