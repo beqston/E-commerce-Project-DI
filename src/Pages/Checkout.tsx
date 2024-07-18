@@ -1,11 +1,12 @@
 import "../assets/style/chekout.scss"
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Input, { PropsType } from "../Components/Input/Input";
 import Modal from 'react-modal';
 import { useNavigate } from "react-router-dom";
-import { Cartcontext } from "../Context/Context";
+// import { Cartcontext } from "../Context/Context";
 import shapeImg from "../assets/Photos/Checkout/Shape.svg"
 import { useForm } from "react-hook-form";
+
 
 
 type FormData = {
@@ -35,7 +36,7 @@ const Checkout = ()=> {
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const navigator = useNavigate();
-    const {prodArray, setProdArray} = useContext(Cartcontext);
+    // const {prodArray, setProdArray} = useContext(Cartcontext);
 
     const [paymentMethod, setPaymentMethod] = useState<"e-money" | "cash">("e-money");
     return (
@@ -256,7 +257,6 @@ const Checkout = ()=> {
             </section>
 
           </main>
-          
                 
               <aside>
 
@@ -267,7 +267,7 @@ const Checkout = ()=> {
 
 
         </form> 
-
+             
 
           {/* <button className="sss" onClick={()=> {setIsOpen(true)}}>Open Modal</button> */}
 

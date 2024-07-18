@@ -1,5 +1,5 @@
 import classname from "../assets/style/item.module.scss"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { ProductsType } from "../Types/ProductsTypes";
 import CountInput from "../Components/CountInput/CountInput";
@@ -7,6 +7,7 @@ import AddToCard from "../Components/AddToCard/AddToCard";
 import ButtonChokolate from "../Components/button/ButtonChokolate";
 import ProductSection from "../Components/ProductsSection/ProductSection";
 import MainBottom from "../Components/MainBottom/MainBottom";
+import { CartContext, CartContextType } from "../Context/Context";
 
 interface ProdID{
     id: number | string | undefined
@@ -16,6 +17,11 @@ const Product = ()=> {
     const navigate = useNavigate()
     const {productID} = useParams()
     const [prods, setProds] = useState<null | ProductsType[]>(null)
+
+    const {cart, updateCart} = useContext(CartContext) as CartContextType;
+    
+
+    const [num, setNum] = useState(1)
 
 
     const getData = async ()=> {
@@ -56,11 +62,10 @@ const Product = ()=> {
                         <p className={classname['price']}><span>$ {prod.price}</span></p>
 
                         <div className={classname['count-addcard']}>
-                            <CountInput  />
-                            <AddToCard 
-                                price={prod.price} 
-                                name={prod.name}
-                            />
+                            <CountInput num={num} setNum={setNum} />
+                            {                          
+                                prod && (<AddToCard onClick={()=> updateCart(num, prod)} />)
+                            }
                         </div>
 
                       </div>
