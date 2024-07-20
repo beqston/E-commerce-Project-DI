@@ -1,18 +1,14 @@
-// import { ContextType, useContext } from "react";
 import "./style.scss"
-// import { CartContext } from "../../Context/Context";
 import { Dispatch } from "react";
 
 type Props = {
     num: number;
-    setNum: Dispatch<React.SetStateAction<number>>
-}
+    setNum: Dispatch<React.SetStateAction<number>> | ((num: number) => void);
+  };
 
 
 const CountInput = ({num, setNum} : Props)=> {
 
-
-    // const {num, setNum} = useContext(Cartcontext) as ContextType;
     
     const handlClickMinus = ()=> {
         if(num === 0){

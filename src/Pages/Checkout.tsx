@@ -1,11 +1,12 @@
 import "../assets/style/chekout.scss"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Input, { PropsType } from "../Components/Input/Input";
 import Modal from 'react-modal';
 import { useNavigate } from "react-router-dom";
 // import { Cartcontext } from "../Context/Context";
 import shapeImg from "../assets/Photos/Checkout/Shape.svg"
 import { useForm } from "react-hook-form";
+import { CartContext, CartContextType } from "../Context/Context";
 
 
 
@@ -24,13 +25,16 @@ type FormData = {
 
 const Checkout = ()=> {
 
+  const {cart, updateCart} = useContext(CartContext) as CartContextType;
+
+
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
   const OnSubmit =(data: PropsType)=> {
       console.log(data)
       console.log(register)
       console.log(handleSubmit)
-      data.accessKey === ""
+      // data.accessKey === ""
   }
 
 
@@ -263,6 +267,32 @@ const Checkout = ()=> {
                 <h2>Summary</h2>
 
                 <button type="submit">subm</button>
+
+
+                {/* {
+                cart.map((item)=> {
+                  return(
+                    
+                      <div style={{
+                        background:"red",
+                        width: "100px",
+                        height: "100px"
+                      }} key={item.product.id}>
+
+                        <h1>222</h1>
+                      
+                        <h3>{item.product.name}</h3>
+                        
+                      </div>
+                    
+                  )
+                })
+              } */}
+
+
+                <div>
+              
+            </div>
               </aside>
 
 
@@ -279,22 +309,11 @@ const Checkout = ()=> {
             onAfterClose={()=> document.body.style.overflow === "auto"}
           >
 
-            <button onClick={()=> {setIsOpen(false)}}>close</button>
-            <div>I am a modal</div>
-            <form>
-              <input />
-              <button>tab navigation</button>
-              <button>stays</button>
-              <button>inside</button>
-              <button>the modal</button>
-            </form>npx
-
             
           </Modal>
 
-
-
         </div>
+        
       );
 }
 

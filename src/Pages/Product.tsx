@@ -17,11 +17,14 @@ const Product = ()=> {
     const navigate = useNavigate()
     const {productID} = useParams()
     const [prods, setProds] = useState<null | ProductsType[]>(null)
-
     const {cart, updateCart} = useContext(CartContext) as CartContextType;
-    
 
-    const [num, setNum] = useState(1)
+    const [num, setNum] = useState(()=>{
+        const item = cart.find((item)=> item.product.id === productID);
+        if(item){
+            return item.amount;
+        }return 1;
+    })
 
 
     const getData = async ()=> {
@@ -62,9 +65,17 @@ const Product = ()=> {
                         <p className={classname['price']}><span>$ {prod.price}</span></p>
 
                         <div className={classname['count-addcard']}>
-                            <CountInput num={num} setNum={setNum} />
+                            <CountInput
+                             num={num} 
+                             setNum={setNum} 
+                             />
+
                             {                          
-                                prod && (<AddToCard onClick={()=> updateCart(num, prod)} />)
+                                prod && (<AddToCard onClick={()=> {
+                                    updateCart(num, prod);
+                                    console.log(prod);
+                                    console.log(num)
+                                }} />)
                             }
                         </div>
 
@@ -193,5 +204,6 @@ const Product = ()=> {
       
     )
 }
+
 
 export default Product;

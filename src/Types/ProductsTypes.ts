@@ -1,5 +1,5 @@
 export interface ProductsType {
-    id:            number;
+    id:            string;
     slug:          string;
     name:          string;
     image:         CategoryImage;
