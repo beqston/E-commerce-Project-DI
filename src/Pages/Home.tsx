@@ -14,7 +14,9 @@ import earphonesMob from "../../public/assets/home/mobile/image-earphones-yx1.jp
 const Home = ()=>  {
 
     return(
-        <main className={classname.home}>
+        <main style={{
+            width:"100%"
+        }} className={classname.home}>
 
             <section className={classname['home-head-container']}>
                 

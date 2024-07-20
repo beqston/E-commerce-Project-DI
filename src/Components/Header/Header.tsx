@@ -9,34 +9,42 @@ import ProductSection from "../ProductsSection/ProductSection";
 import Modal from 'react-modal';
 
 const Header = () => {
-  const [burgIcon, setBurgIcon] = useState("burg-menu-icon");
+  
   const [menuList, setMenutList] = useState("none");
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const handlBurgIcon = () => {
-    setBurgIcon("none");
     setMenutList("burg-menu-list");
   };
 
   const handlMenuList = () => {
-    setBurgIcon("burg-menu-icon");
     setMenutList("none");
   };
   return (
+    <>
+
+<div className={classname["burg-menu-container"]}>
+          <div onClick={handlBurgIcon} className={classname[`burg-menu-icon`]}>
+            <img src={burgicon} alt="burg-icon" />
+          </div>
+
+          <nav style={{
+            minWidth: "144%",
+            height: "800px",
+            position: "absolute",
+            top:"100px",
+            zIndex:"20",
+            backgroundColor: "white"
+          }} onClick={handlMenuList} className={classname[`${menuList}`]}>
+            <ProductSection />
+          </nav>
+        </div>
     <header>
       <div className={classname["header-container"]}>
       
       
-        <div className={classname["burg-menu-container"]}>
-          <div onClick={handlBurgIcon} className={classname[`${burgIcon}`]}>
-            <img src={burgicon} alt="burg-icon" />
-          </div>
 
-          <nav onClick={handlMenuList} className={classname[`${menuList}`]}>
-            <ProductSection />
-          </nav>
-        </div>
 
         <div className={classname["header-left-container"]}>
           
@@ -91,6 +99,8 @@ const Header = () => {
         </div>
       </div>
     </header>
+
+  </>
   );
 };
 

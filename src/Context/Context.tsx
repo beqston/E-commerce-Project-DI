@@ -20,22 +20,22 @@ const CartContextProvider = ({children}: {children: ReactNode})=> {
 
     const updateCart = (num: number, prod: ProductsType)=> {
 
-        if(num === 0){
-            const newCart = cart.filter(currentItem => currentItem.product.id !== prod.id );
-            setCart(newCart);
-            return
-        }
-
-        const item = cart.find(currentItem => currentItem.product.id === prod.id);
-        
-        if(item){
-            const newCart = cart.map(currentItem => currentItem.product.id !== prod.id? currentItem: {...currentItem, amount: num});
-            setCart(newCart)
-        }else{
-            setCart([...cart, {amount: num, product: prod} ])
-        }
-
-    }
+        if (num > 0) {
+            const item = cart.find((currItem) => currItem.product.id === prod.id);
+      
+            if (item) {
+              const newCart = cart.map((currItem) =>
+                currItem.product.id !== prod.id
+                  ? currItem
+                  : { ...currItem, amount: num }
+              );
+              setCart(newCart);
+            } else {
+              setCart([...cart, { amount: num, product: prod }]);
+            }
+          }
+        };
+      
 
     return(
         <CartContext.Provider value={{cart, updateCart }}>

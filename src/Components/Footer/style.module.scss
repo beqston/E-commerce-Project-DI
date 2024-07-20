@@ -105,11 +105,17 @@ footer{
    }   
 }
 
-// @media screen and (max-width: 980px){
-//     nav{
-//         translate: -4rem;
-//     }
-// }
+@media screen and (max-width: 980px){
+    nav{
+        translate: -4rem;
+    }
+}
+
+@media screen and (max-width: 820px){
+    nav{
+        translate: 0;
+    }
+}
 
 @media screen and (max-width: 820px) {
 footer{
