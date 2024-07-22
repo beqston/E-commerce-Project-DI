@@ -49,7 +49,8 @@ const Header = () => {
         <div className={classname["header-left-container"]}>
           
           <div className={classname.img}>
-            <img src={Audiofile} alt="Audiofile" />
+            <Link to={"/"}><img src={Audiofile} alt="Audiofile" /></Link>
+            
           </div>
         </div>
 

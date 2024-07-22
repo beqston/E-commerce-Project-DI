@@ -248,9 +248,7 @@ const Checkout = ()=> {
                     message: "Not Correct"
                   }
                 })}
-                isError={Boolean(errors.moneypin)}
-
-                
+                isError={Boolean(errors.moneypin)}               
               />
 
             </div>: null
@@ -267,25 +265,23 @@ const Checkout = ()=> {
                 <button type="submit">subm</button>
 
                 
-                 {
-                cart.map((item)=> {
-                  return(
-                    
-                      <div style={{
-                        background:"red",
-                        width: "100px",
-                        height: "100px"
-                      }} key={item.product.id}>
+                 <h4>
+                  product list
+                 </h4>
 
-                        <h1>222</h1>
-                      
-                        <h3>{item.product.name}</h3>
-                        
-                      </div>
-                    
-                  )
-                })
-              } 
+                 <div>
+                  {
+                    cart.map((item)=> {
+                      console.log(item)
+                      return(
+                        <div>
+                          <h3>{item.product.name}</h3>
+                          <p>{item.amount}</p>
+                        </div>
+                      )
+                    })
+                  }
+                 </div>
 
 
                 <div>

@@ -8,9 +8,9 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <CartContextProvider>
-      <RouterComponent />
-    </CartContextProvider>
+      <CartContextProvider>
+        <RouterComponent />
+      </CartContextProvider>
     </BrowserRouter>
     </>
   )

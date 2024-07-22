@@ -211,7 +211,12 @@
 
         .item-cnt{    
             .top-section{
-                column-gap: 4rem;  
+                column-gap: 4rem;
+                .top-section{
+                    picture{
+                        width: 80% ;
+                    }
+                }  
                 .text-cnt{
                     padding-right: 1.8rem;                   
                 }

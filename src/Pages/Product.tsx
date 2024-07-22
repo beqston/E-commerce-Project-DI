@@ -9,14 +9,16 @@ import ProductSection from "../Components/ProductsSection/ProductSection";
 import MainBottom from "../Components/MainBottom/MainBottom";
 import { CartContext, CartContextType } from "../Context/Context";
 
-interface ProdID{
-    id: number | string | undefined
+
+type ProdID = {
+    id: string | undefined
 }
 
 const Product = ()=> {
     const navigate = useNavigate()
     const {productID} = useParams()
     const [prods, setProds] = useState<null | ProductsType[]>(null)
+
     const {cart, updateCart} = useContext(CartContext) as CartContextType;
 
     const [num, setNum] = useState(()=>{
@@ -73,9 +75,8 @@ const Product = ()=> {
                             {                          
                                 prod && (<AddToCard onClick={()=> {
                                     updateCart(num, prod);
-                                    console.log(prod);
-                                    console.log(num)
-                                }} />)
+
+                                }} > </AddToCard>)
                             }
                         </div>
 
