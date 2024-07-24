@@ -25,7 +25,7 @@ const Product = ()=> {
         const item = cart.find((item)=> item.product.id === productID);
         if(item){
             return item.amount;
-        }return 1;
+        } return 1;
     })
 
 

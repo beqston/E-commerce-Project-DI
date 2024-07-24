@@ -1,14 +1,20 @@
 import classname from "./style.module.scss";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Card from "../../assets/Photos/Card/Card.svg";
 import Audiofile from "../../assets/Photos/HeaderPhoto/audiophile.svg";
 import burgicon from "../../assets/Photos/burgMenu/burgIcon.png";
 import ProductSection from "../ProductsSection/ProductSection";
-
 import Modal from 'react-modal';
+import { CartContext, CartContextType } from "../../Context/Context";
+import "./style.scss"
+import CountInput from "../CountInput/CountInput";
+
 
 const Header = () => {
+
+  const {cart, updateCart} = useContext(CartContext) as CartContextType;
+  const navigate = useNavigate();
   
   const [menuList, setMenutList] = useState("none");
 
@@ -21,6 +27,9 @@ const Header = () => {
   const handlMenuList = () => {
     setMenutList("none");
   };
+
+  
+
   return (
     <>
 
@@ -74,9 +83,12 @@ const Header = () => {
         </div>
 
         <div className={classname["header-right-container"]}>
+          
           <div className={classname["card-img"]}>
             <img onClick={()=> setIsOpen(true)} src={Card} alt="Card" />
+
             <Modal
+            className="header-modal-bg"
             onRequestClose={()=>setIsOpen(false)}
             isOpen={modalIsOpen}
             shouldCloseOnOverlayClick={true}
@@ -84,15 +96,58 @@ const Header = () => {
             onAfterClose={()=> document.body.style.overflow = "auto"}
           >
 
-            {/* <button onClick={()=> {setIsOpen(false)}}>close</button>
-            <div>I am a modal</div>
-            <form>
-              <input />
-              <button>tab navigation</button>
-              <button>stays</button>
-              <button>inside</button>
-              <button>the modal</button>
-            </form>npx */}
+          </Modal>
+
+          <Modal
+            className="header-modal-content-cnt"
+            onRequestClose={()=>setIsOpen(false)}
+            isOpen={modalIsOpen}
+            shouldCloseOnOverlayClick={true}
+            onAfterOpen={()=> document.body.style.overflow = "hidden"}
+            onAfterClose={()=> document.body.style.overflow = "auto"}
+          >
+
+           
+           <div className="head-info">
+            <p className="cart">CART ({cart.length})</p>
+            <p className="remove">Remove All</p>
+           </div>
+
+              {
+                  
+                cart.map((item)=> {
+ 
+                  return(
+                    <div className="item-cnt">
+
+                      <div className="item-left-cnt">
+                        <img
+                          src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
+                          alt="photo"
+                        />
+                       <h4>{item.product.name}</h4>
+                      </div>
+
+                      <div className="item-rigth-cnt">
+                            <CountInput
+                              num={item.amount}
+                              setNum={(num: number) => updateCart(num, item.product)}
+                             />
+                      </div>
+                      
+                    </div>
+                  )
+                })
+                
+              }
+
+              <div>
+                <button onClick={()=> {
+                  setIsOpen(false);
+                  navigate("/chekout")
+                }}>chekout</button>
+              </div>
+           
             
           </Modal>
 

@@ -38,7 +38,6 @@ const Checkout = ()=> {
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const navigator = useNavigate();
-    // const {prodArray, setProdArray} = useContext(Cartcontext);
 
     const [paymentMethod, setPaymentMethod] = useState<"e-money" | "cash">("e-money");
     return (

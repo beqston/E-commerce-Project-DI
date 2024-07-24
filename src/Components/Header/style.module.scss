@@ -4,6 +4,7 @@
     display: flex;
     justify-content:start;
     padding-bottom: 2.2rem;
+    z-index: 10;
 
 
     .header-left-container{
@@ -58,7 +59,7 @@
         width: 35%;
         display: flex;
         justify-content: center;
-        align-items: center;     
+        align-items: center;  
 
         img{
             padding-top: 2rem;
@@ -195,3 +196,4 @@
         }
     }
 }
+
