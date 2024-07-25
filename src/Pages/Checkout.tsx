@@ -24,7 +24,7 @@ type FormData = {
 
 const Checkout = ()=> {
 
-  const {cart, updateCart} = useContext(CartContext) as CartContextType;
+  const {cart} = useContext(CartContext) as CartContextType;
 
 
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
@@ -257,33 +257,111 @@ const Checkout = ()=> {
 
           </main>
                 
-              <aside>
+              <aside className="chekout-aside">
 
                 <h2>Summary</h2>
 
-                <button type="submit">subm</button>
-
-                
-                 <h4>
-                  product list
-                 </h4>
-
-                 <div>
-                  {
-                    cart.map((item)=> {
-                      console.log(item)
-                      return(
-                        <div>
-                          <h3>{item.product.name}</h3>
-                          <p>{item.amount}</p>
+                 {
+                  
+                  cart.map((item)=> {
+   
+                    return(
+                      <div className="item-cnt">
+  
+                        <div className="item-left-cnt">
+                          <img
+                            src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
+                            alt="photo"
+                          />
+                          <div className="price-cnt">
+                            <h4>{item.product.name}</h4>
+                            <p className="price">${item.product.price}</p>
+                          </div>
+  
                         </div>
-                      )
-                    })
-                  }
+                      
+                        <p className="amaunt">
+                            x{item.amount}
+                        </p>
+                        
+                        
+                      </div>
+                    )
+                  })
+                  
+                }
+  
+                <div className="chekout-total-cnt">
+
+                  <p className="chekout-total">
+                    TOTAL
+                  </p>
+  
+                  <p className="total-cash">
+                    $
+                    {cart.reduce(
+                      (sum, item) => sum + item.product.price * item.amount,
+                      0)
+                    }
+                  </p>
+
                  </div>
 
 
                 <div>
+
+                  <div className="text-price-cnt">
+                    <p className="text">
+                      SHIPPING
+                    </p>
+
+                    <p className="price">
+                      $50
+                    </p>
+
+                  </div>
+
+                  
+                  <div className="text-price-cnt">
+                    <p className="text">
+                    VAT (INCLUDED)
+                    </p>
+
+                    <p className="price">
+                      $
+                    {
+                      Math.floor((cart.reduce(
+                        (sum, item) => sum + item.product.price * item.amount,
+                        0) ) * 0.2)
+                    }
+                    </p>
+
+                  </div>
+
+                  <div className="grand-total">
+
+                    <p className="text">
+                      GRAND TOTAL
+                    </p>
+
+                    <p className="all-price">
+                      $
+                      {
+                        (cart.reduce(
+                          (sum, item) => sum + item.product.price * item.amount,
+                          0)) + 50 + Math.floor((cart.reduce(
+                            (sum, item) => sum + item.product.price * item.amount,
+                            0) ) * 0.2)
+                      }
+                    </p>
+                    
+                  </div>
+
+                  <div className="succses-btn">
+                    <button>CONTINUE & PAY</button>
+                  </div>
+
+
               
             </div>
               </aside>

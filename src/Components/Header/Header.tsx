@@ -150,6 +150,7 @@ const Header = () => {
                 </p>
 
                 <p className="head-count">
+                  $
                   {cart.reduce(
                     (sum, item) => sum + item.product.price * item.amount,
                     0)
