@@ -13,7 +13,7 @@ import CountInput from "../CountInput/CountInput";
 
 const Header = () => {
 
-  const {cart, updateCart} = useContext(CartContext) as CartContextType;
+  const {cart, updateCart, clearCart} = useContext(CartContext) as CartContextType;
   const navigate = useNavigate();
   
   const [menuList, setMenutList] = useState("none");
@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <>
 
-<div className={classname["burg-menu-container"]}>
+        <div className={classname["burg-menu-container"]}>
           <div onClick={handlBurgIcon} className={classname[`burg-menu-icon`]}>
             <img src={burgicon} alt="burg-icon" />
           </div>
@@ -106,11 +106,10 @@ const Header = () => {
             onAfterOpen={()=> document.body.style.overflow = "hidden"}
             onAfterClose={()=> document.body.style.overflow = "auto"}
           >
-
-           
+                
            <div className="head-info">
             <p className="cart">CART ({cart.length})</p>
-            <p className="remove">Remove All</p>
+            <p onClick={clearCart} className="remove">Remove All</p>
            </div>
 
               {
@@ -125,7 +124,11 @@ const Header = () => {
                           src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
                           alt="photo"
                         />
-                       <h4>{item.product.name}</h4>
+                        <div className="price-cnt">
+                          <h4>{item.product.name}</h4>
+                          <p className="price">${item.product.price}</p>
+                        </div>
+
                       </div>
 
                       <div className="item-rigth-cnt">
@@ -141,7 +144,22 @@ const Header = () => {
                 
               }
 
-              <div>
+              <div className="head-total-cnt">
+                <p className="head-total">
+                  TOTAL
+                </p>
+
+                <p className="head-count">
+                  {cart.reduce(
+                    (sum, item) => sum + item.product.price * item.amount,
+                    0)
+                  }
+                </p>
+
+
+              </div>
+
+              <div className="head-chekout-cnt">
                 <button onClick={()=> {
                   setIsOpen(false);
                   navigate("/chekout")
