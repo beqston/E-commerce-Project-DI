@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import shapeImg from "../assets/Photos/Checkout/Shape.svg"
 import { useForm } from "react-hook-form";
 import { CartContext, CartContextType } from "../Context/Context";
+import succses from "../assets/Photos/Checkout/succses.svg"
 
 
 
@@ -274,7 +275,7 @@ const Checkout = ()=> {
                             alt="photo"
                           />
                           <div className="price-cnt">
-                            <h4>{item.product.name}</h4>
+                            <h4>{item.product.name.split(" ").slice(0, -1).join(" ")}</h4>
                             <p className="price">${item.product.price}</p>
                           </div>
   
@@ -358,7 +359,10 @@ const Checkout = ()=> {
                   </div>
 
                   <div className="succses-btn">
-                    <button>CONTINUE & PAY</button>
+                    <button onClick={()=>{
+                      setIsOpen(true);
+                                        
+                    }}>CONTINUE & PAY</button>
                   </div>
 
 
@@ -368,11 +372,18 @@ const Checkout = ()=> {
 
 
         </form> 
+        <Modal
+            className="succses-bg-modal"
+            onRequestClose={()=>setIsOpen(false)}
+            shouldCloseOnEsc={true}
+            isOpen={modalIsOpen}
+            onAfterOpen={()=> document.body.style.overflow === "hidden"}
+            onAfterClose={()=> document.body.style.overflow === "auto"}
+          >           
+          </Modal>
              
-
-          {/* <button className="sss" onClick={()=> {setIsOpen(true)}}>Open Modal</button> */}
-
           <Modal
+            className="succses-modal"
             onRequestClose={()=>setIsOpen(false)}
             shouldCloseOnEsc={true}
             isOpen={modalIsOpen}
@@ -380,8 +391,81 @@ const Checkout = ()=> {
             onAfterClose={()=> document.body.style.overflow === "auto"}
           >
 
+            <div className="succses-img">
+              <img src={succses} alt="succses" />
+            </div>
+
+            <h2 className="succses-title">
+              THANK YOU <br />
+              FOR YOUR ORDER
+            </h2>
+
+            <p className="succses-p">
+              You will receive an email confirmation shortly.
+            </p>
+
+            <div className="succses-items-cnt">
+
+              <div className="succses-item-left">
+
+                {
+                  cart.map((item)=> {
+                    return(
+                      <div className="succses-item">
+                      <img
+                        src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
+                        alt="photo"
+                      />
+                      <div className="succses-price-cnt">
+                        <h4>{item.product.name.split(" ").slice(0, -1).join(" ")}</h4>
+                        <p className="price">${item.product.price}</p>
+                      </div>
+                      <p className="succses-amount">
+                        x
+                        {item.amount}
+                      </p>
+                    </div>
+                    )
+                  })
+                }
+
+                <hr className="succses-hr" />
+
+                <p className="view-less">
+                  View less
+                </p>
+
+              </div>
+
+                
+            <div className="succses-item-rigth">
+              <p className="siccses-grand-total">
+                GRAND TOTAL
+              </p>
+
+              <p className="grand-succses-price">
+                $
+                {
+                  (cart.reduce(
+                    (sum, item) => sum + item.product.price * item.amount,
+                    0)) + 50 + Math.floor((cart.reduce(
+                    (sum, item) => sum + item.product.price * item.amount,
+                    0) ) * 0.2)
+                }
+              </p>
+            </div>
+
+            </div>
+
+              <div className="finish-btn">
+                  <button>
+                    BACK TO HOME
+                  </button>
+              </div>
             
           </Modal>
+
+
 
         </div>
         

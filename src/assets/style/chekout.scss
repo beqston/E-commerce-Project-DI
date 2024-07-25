@@ -119,7 +119,11 @@
                 }
             }
         }
+
     }
+
+
+
     .chekout-aside{
         width: 24.3%;
         height: fit-content;
@@ -267,3 +271,152 @@
     }
 
 }
+.succses-bg-modal{
+    width: 100%;
+    min-height: 100vh;
+    opacity: 0.4;
+    background-color: #000;
+}
+
+.succses-modal{
+    width: 540px;
+    min-height: 200px;
+    max-height: 80vh;
+    margin-bottom: 100px;
+    background-color: var(--color-white100);
+    z-index: 100;
+    padding: 3rem;
+    position: absolute;
+    top: 14%;
+    right: 34%;
+    border-radius: 8px;
+    overflow-y: auto;
+    
+
+    .succses-title{
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+        color: var(--color-black100);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 1.143px;
+        text-transform: uppercase;
+    }
+
+    .succses-p{
+        opacity: 0.5;
+        color: var(--color-black100);
+        line-height: 25px;
+        font-size: 15px;
+        padding-bottom: 2rem;
+    }
+
+    .succses-items-cnt{
+        width: 100%;
+        border-radius: 8px;
+        background-color: var(--color-grey10);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .succses-item-left{
+            padding-right: 1.5rem;
+            padding-left: 2rem;
+            padding-top: 2rem;
+            padding-bottom: 1.2rem;
+            
+        .succses-item{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+        
+            img{
+                width: 50px;
+                height: 50px;
+            }
+
+            .succses-price-cnt{
+                h4{
+                    width: 98px;
+                    text-wrap: nowrap;
+                    overflow: hidden;
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+                .succses-amount{
+                    opacity: 0.5;
+                    line-height: 25px;
+                    font-size: 14px;
+                    padding-top: 8px;
+                    text-align: right;
+                    color: #000;
+                }
+            }
+        }
+        }
+
+    }
+
+    .succses-hr{
+        width: 93%;
+        opacity: 0.2;
+        background: #000;
+    }
+
+    .view-less{
+        color: #000;
+        opacity: 0.5;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: -0.214px;
+        padding-top: 12px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .succses-item-rigth{
+        // width: 42%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-left: 2rem;
+        padding-bottom: 2.7rem;
+
+        .siccses-grand-total{
+            opacity: 0.5;
+            color: #FFF;
+            font-size: 15px;
+            font-style: normal;
+            line-height: 25px;
+        }
+
+        .grand-succses-price{
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-top: 8px;
+        }
+    }
+
+    .finish-btn{
+        width: 100%;
+        margin-top: 3rem;
+        // margin-bottom: 3rem;
+
+        button{
+            width: 100%;
+            background-color: #FBAF85;
+            padding: 15px 0px;
+            cursor: pointer;
+            border-style: none;
+            color: #FFF;
+        }
+    }
+}
+
+
+

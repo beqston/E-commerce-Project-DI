@@ -125,7 +125,7 @@ const Header = () => {
                           alt="photo"
                         />
                         <div className="price-cnt">
-                          <h4>{item.product.name}</h4>
+                          <h4>{item.product.name.split(" ").slice(0, -1).join(" ")}</h4>
                           <p className="price">${item.product.price}</p>
                         </div>
 
