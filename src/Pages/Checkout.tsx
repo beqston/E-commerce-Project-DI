@@ -30,13 +30,18 @@ const Checkout = ()=> {
 
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
-  const OnSubmit =(data: PropsType)=> {
-      console.log(data)
-      console.log(register)
-      console.log(handleSubmit)
+  const OnSubmit =()=> {
+    if(cart.length === 0){
+      setIsOpen(false)
+      return
+    }
+      if(!errors.name){
+        setIsOpen(true)
+      }else{
+        setIsOpen(false)
+      }
   }
-
-
+  
     const [modalIsOpen, setIsOpen] = useState(false);
     const navigator = useNavigate();
 
@@ -265,7 +270,7 @@ const Checkout = ()=> {
                  {
                   
                   cart.map((item)=> {
-   
+  
                     return(
                       <div className="item-cnt">
   
@@ -280,11 +285,10 @@ const Checkout = ()=> {
                           </div>
   
                         </div>
-                      
+                    
                         <p className="amaunt">
                             x{item.amount}
                         </p>
-                        
                         
                       </div>
                     )
@@ -359,10 +363,7 @@ const Checkout = ()=> {
                   </div>
 
                   <div className="succses-btn">
-                    <button onClick={()=>{
-                      setIsOpen(true);
-                                        
-                    }}>CONTINUE & PAY</button>
+                    <button>CONTINUE & PAY</button>
                   </div>
 
 
