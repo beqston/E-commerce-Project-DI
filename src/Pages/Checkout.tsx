@@ -1,6 +1,6 @@
 import "../assets/style/chekout.scss"
 import { useContext, useState } from "react";
-import Input, { PropsType } from "../Components/Input/Input";
+import Input from "../Components/Input/Input";
 import Modal from 'react-modal';
 import { useNavigate } from "react-router-dom";
 import shapeImg from "../assets/Photos/Checkout/Shape.svg"
@@ -25,31 +25,38 @@ type FormData = {
 
 const Checkout = ()=> {
 
-  const {cart} = useContext(CartContext) as CartContextType;
+  const {cart, clearCart} = useContext(CartContext) as CartContextType;
 
 
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
   const OnSubmit =()=> {
-    if(cart.length === 0){
-      setIsOpen(false)
-      return
+    // if(cart.length === 0){
+    //   setIsOpen(false)
+    //   return
+    // }
+    //   if(!errors.name){
+    //     setIsOpen(true)
+    //   }else{
+    //     setIsOpen(false)
+    //   }
+   
+  }
+
+  const handlClick = ()=>{
+    if(cart.length > 1){
+      cart.slice(1, 1).map((item)=> item)
     }
-      if(!errors.name){
-        setIsOpen(true)
-      }else{
-        setIsOpen(false)
-      }
   }
   
     const [modalIsOpen, setIsOpen] = useState(false);
-    const navigator = useNavigate();
+    const navigate = useNavigate();
 
     const [paymentMethod, setPaymentMethod] = useState<"e-money" | "cash">("e-money");
     return (
         <div className="chekout-cnt">
 
-          <p onClick={()=> {navigator(-1)}} className="chekout-back">
+          <p onClick={()=> {navigate(-1)}} className="chekout-back">
            Go Back
           </p>
 
@@ -363,7 +370,7 @@ const Checkout = ()=> {
                   </div>
 
                   <div className="succses-btn">
-                    <button>CONTINUE & PAY</button>
+                    <button onClick={()=>  setIsOpen(true)}>CONTINUE & PAY</button>
                   </div>
 
 
@@ -432,7 +439,7 @@ const Checkout = ()=> {
 
                 <hr className="succses-hr" />
 
-                <p className="view-less">
+                <p onClick={handlClick} className="view-less">
                   View less
                 </p>
 
@@ -459,7 +466,10 @@ const Checkout = ()=> {
             </div>
 
               <div className="finish-btn">
-                  <button>
+                  <button  onClick={()=>{
+                    navigate("/")
+                    clearCart()     
+                  }}>
                     BACK TO HOME
                   </button>
               </div>

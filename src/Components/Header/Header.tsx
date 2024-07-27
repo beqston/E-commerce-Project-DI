@@ -17,11 +17,14 @@ const Header = () => {
   const navigate = useNavigate();
   
   const [menuList, setMenutList] = useState("none");
-
   const [modalIsOpen, setIsOpen] = useState(false);
 
+
   const handlBurgIcon = () => {
-    setMenutList("burg-menu-list");
+    setMenutList("burg-menu-list"); 
+    if(menuList === "burg-menu-list"){
+      setMenutList("none")
+    } 
   };
 
   const handlMenuList = () => {
@@ -38,17 +41,16 @@ const Header = () => {
             <img src={burgicon} alt="burg-icon" />
           </div>
 
-          <nav style={{
-            minWidth: "144%",
-            height: "800px",
-            position: "absolute",
-            top:"100px",
-            zIndex:"20",
-            backgroundColor: "white"
-          }} onClick={handlMenuList} className={classname[`${menuList}`]}>
-            <ProductSection />
-          </nav>
+
+
+            <nav onClick={handlMenuList} className={classname[`${menuList}`]}>
+              <div className="renderburg">
+               <ProductSection />
+              </div>
+            </nav>
+  
         </div>
+
     <header>
       <div className={classname["header-container"]}>
       

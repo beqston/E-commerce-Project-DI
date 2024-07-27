@@ -126,4 +126,25 @@
             border-style: none;
         }
     }
+
+}
+
+.renderburg{
+    width: 95%;
+    overflow: auto;
+    height: fit-content;
+    max-height: 80vh;
+    padding-bottom: 4rem;
+    background-color: var(--color-white100);
+    position: absolute;
+    z-index: 2000;
+    top: 170px;
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 710px) {
+    .renderburg{
+        top: -32px;
+    }
 }

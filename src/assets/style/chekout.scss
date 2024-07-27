@@ -25,6 +25,8 @@
             padding-left: 3.3%;
             padding-right: 3.3%;
             background-color: var(--color-white100);
+            padding-bottom: 4rem;
+            border-radius: 8px;
             
             
             .h2-heading{
@@ -317,7 +319,7 @@
         border-radius: 8px;
         background-color: var(--color-grey10);
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 10fr 8fr;
 
         .succses-item-left{
             padding-right: 1.5rem;
@@ -344,14 +346,20 @@
                     font-size: 15px;
                     font-weight: 700;
                 }
-                .succses-amount{
+
+                .price{
                     opacity: 0.5;
-                    line-height: 25px;
-                    font-size: 14px;
-                    padding-top: 8px;
-                    text-align: right;
                     color: #000;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 28px;
                 }
+            }
+            .succses-amount{
+                opacity: 0.5;
+                font-size: 14px;
+                text-align: right;
+                color: #000;
             }
         }
         }
@@ -376,7 +384,6 @@
     }
 
     .succses-item-rigth{
-        // width: 42%;
         height: 100%;
         background-color: black;
         display: flex;
