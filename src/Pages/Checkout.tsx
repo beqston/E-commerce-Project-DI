@@ -30,31 +30,17 @@ const Checkout = ()=> {
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
   const OnSubmit =()=> {
-    // if(cart.length === 0){
-    //   setIsOpen(false)
-    //   return
-    // }
-    //   if(!errors.name){
-    //     setIsOpen(true)
-    //   }else{
-    //     setIsOpen(false)
-    //   }
-   
+    if(cart.length === 0){
+      setIsOpen(false)
+      return
+    }
+      if(!errors.name){
+        setIsOpen(true)
+      }else{
+        setIsOpen(false)
+      }
   }
 
-
-
-
-  const handlClick = ()=>{
-    cart.find((item, index)=>{
-      console.log(item)
-      return index === 1
-    })
-  }
-
-
-
-  
     const [modalIsOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -447,7 +433,7 @@ const Checkout = ()=> {
 
                 <hr className="succses-hr" />
 
-                <p onClick={handlClick} className="view-less">
+                <p className="view-less">
                   View less
                 </p>
 
