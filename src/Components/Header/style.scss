@@ -74,7 +74,6 @@
                     overflow: hidden;
                     text-wrap: nowrap;
                 }
-
                 .price{
                     opacity: 0.5;
                     color: var(---color-black100);
@@ -126,10 +125,8 @@
             border-style: none;
         }
     }
-
 }
-
-.renderburg{
+.burg-menu-render{
     width: 95%;
     overflow: auto;
     height: fit-content;
@@ -141,12 +138,21 @@
     top: 170px;
     border-radius: 8px;
 }
-
-
-
+@media screen and (max-width: 800px) {
+    .header-modal-content-cnt{
+        width: 380px;
+        right: 10%;
+    }
+}
 @media screen and (max-width: 710px) {
-    .renderburg{
+    .burg-menu-render{
         top: -32px;
     }
 }
-
+@media screen and (max-width: 498px) {
+    .header-modal-content-cnt{
+        width: 90%;
+        left: 5%;
+        top: 110px;
+    }
+}

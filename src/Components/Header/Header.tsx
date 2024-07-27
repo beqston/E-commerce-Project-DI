@@ -44,7 +44,7 @@ const Header = () => {
 
 
             <nav onClick={handlMenuList} className={classname[`${menuList}`]}>
-              <div className="renderburg">
+              <div className="burg-menu-render">
                <ProductSection />
               </div>
             </nav>
