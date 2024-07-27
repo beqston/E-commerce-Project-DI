@@ -98,7 +98,7 @@ input[type=number] {
     cursor: pointer;
 }
 .radio-input-cnt{
-    width: 310px;
+    width: 100%;
     border-radius: 8px;
     border: 1px solid #CFCFCF;
     background: #FFF;

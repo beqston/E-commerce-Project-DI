@@ -27,7 +27,6 @@ const Checkout = ()=> {
 
   const {cart, clearCart} = useContext(CartContext) as CartContextType;
 
-
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
   const OnSubmit =()=> {
@@ -43,11 +42,18 @@ const Checkout = ()=> {
    
   }
 
+
+
+
   const handlClick = ()=>{
-    if(cart.length > 1){
-      cart.slice(1, 1).map((item)=> item)
-    }
+    cart.find((item, index)=>{
+      console.log(item)
+      return index === 1
+    })
   }
+
+
+
   
     const [modalIsOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
@@ -60,7 +66,7 @@ const Checkout = ()=> {
            Go Back
           </p>
 
-          <form onSubmit={handleSubmit(OnSubmit)}>
+          <form className="chekout-form"  onSubmit={handleSubmit(OnSubmit)}>
 
           <main className="chekout-main-cnt">
 
@@ -213,10 +219,10 @@ const Checkout = ()=> {
 
             <section className="checkout-bottom-cnt">
 
-            {paymentMethod === "cash"? 
-            <div className="chekout-bottom-text-cnt">
+              {paymentMethod === "cash"? 
+              <div className="chekout-bottom-text-cnt">
             
-            <div className="checkout-botom-left">
+                <div className="checkout-botom-left">
                   <img src={shapeImg} alt="Image" />
                 </div>
 
@@ -226,10 +232,10 @@ const Checkout = ()=> {
                     Just make sure your address is correct so that your order will not be cancelled.
                   </p>
                 </div>
-                </div>: null}
+              </div>: null}
 
-            {
-              paymentMethod === "e-money"?    <div className="chekout-bottom-input-cnt">
+              {
+              paymentMethod === "e-money"? <div className="chekout-bottom-input-cnt">
 
               <Input
                 title="e-Money Number"
@@ -265,6 +271,8 @@ const Checkout = ()=> {
 
             </div>: null
             }
+
+
 
             </section>
 
@@ -447,7 +455,7 @@ const Checkout = ()=> {
 
                 
             <div className="succses-item-rigth">
-              <p className="siccses-grand-total">
+              <p className="succses-grand-total">
                 GRAND TOTAL
               </p>
 
