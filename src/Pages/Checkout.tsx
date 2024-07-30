@@ -24,7 +24,7 @@ type FormData = {
 
 const Checkout = ()=> {
 
-  const {cart, clearCart, handlLessMOre, nom} = useContext(CartContext) as CartContextType;
+  const {cart, clearCart, handlLessMOre, succsesArr} = useContext(CartContext) as CartContextType;
   const [lessElement, setLessElement] = useState(true)
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
@@ -430,7 +430,7 @@ const Checkout = ()=> {
                       )
                     })
                   ):(
-                    nom.map((item)=> {
+                    succsesArr.map((item)=> {
                       return(
                         <div className="succses-item">
                         <img

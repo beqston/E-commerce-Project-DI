@@ -29,11 +29,16 @@
             padding-bottom: 10rem;
             .picture{
                 width: 50%;
+                height: fit-content;
                 
                 picture{
                     width: 100%;
+                    min-height: 480px;
+                    height: fit-content;
                     img{
                         max-width: 100%;
+                        min-height: 480px;
+                        height: fit-content;
                     }
                 }
             }
@@ -187,16 +192,6 @@
             .top-section{
                 column-gap: 5rem;
                 padding-bottom: 8rem;
-                .picture{
-                    width: 50%;
-                    height: 480px;
-                    picture{
-                        height: 100%;
-                        img{
-                            height: 100%;
-                        }
-                    }
-                }
                 .text-cnt{
                     padding-right: 4rem;
                 }
