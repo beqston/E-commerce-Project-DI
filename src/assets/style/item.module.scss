@@ -359,6 +359,19 @@
 @media screen and (max-width: 580px) {
     .main-item-cnt{
         .item-cnt{    
+            .picture{
+                width: 50%;
+                height: fit-content;
+                
+                picture{
+                    width: 100%;
+                    height: fit-content;
+                    img{
+                        max-width: 100%;
+                        height: fit-content;
+                    }
+                }
+            }
             .bottom-section{  
                 .box{
                     padding-top: 5.5rem;
@@ -381,6 +394,8 @@
     .main-item-cnt{
         .item-cnt{ 
             .top-section{
+
+                
                 .text-cnt{
                     h3{
                         max-width: 87%;
