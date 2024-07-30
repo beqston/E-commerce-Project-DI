@@ -9,7 +9,6 @@ import { CartContext, CartContextType } from "../Context/Context";
 import succses from "../assets/Photos/Checkout/succses.svg"
 
 
-
 type FormData = {
   name: string,
   email: string,
@@ -25,8 +24,8 @@ type FormData = {
 
 const Checkout = ()=> {
 
-  const {cart, clearCart} = useContext(CartContext) as CartContextType;
-
+  const {cart, clearCart, handlLessMOre} = useContext(CartContext) as CartContextType;
+  const [lessElement, setLessElement] = useState(true)
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
   const OnSubmit =()=> {
@@ -364,7 +363,7 @@ const Checkout = ()=> {
                   </div>
 
                   <div className="succses-btn">
-                    <button onClick={()=>  setIsOpen(true)}>CONTINUE & PAY</button>
+                    <button>CONTINUE & PAY</button>
                   </div>
 
 
@@ -433,8 +432,11 @@ const Checkout = ()=> {
 
                 <hr className="succses-hr" />
 
-                <p className="view-less">
-                  View less
+                <p onClick={()=>{
+                  handlLessMOre()
+                  setLessElement(!lessElement)
+                }} className="view-less">
+                  {lessElement? "View less": "View More"}
                 </p>
 
               </div>

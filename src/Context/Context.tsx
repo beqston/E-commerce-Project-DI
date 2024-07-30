@@ -10,12 +10,23 @@ export type CartContextType = {
   updateCart: (num: number, prod: ProductsType) => void;
   cart: CartItemType[];
   clearCart: () => void;
+  handlLessMOre: () => void;
 };
 
 export const CartContext = createContext<null | CartContextType>(null);
 
 const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItemType[]>([]);
+  const [nom, setNom] = useState<CartItemType[]>([]);
+
+  const handlLessMOre = ()=> {
+    if(cart.length > 1){
+      setNom(cart)
+      setCart([cart[0]])
+    }else{
+      setCart(nom)
+    }
+  }
 
   const clearCart = () => {
     setCart([]);
@@ -48,7 +59,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
 
   
   return (
-    <CartContext.Provider value={{ cart, updateCart, clearCart }}>
+    <CartContext.Provider value={{ cart, updateCart, clearCart, handlLessMOre }}>
       {children}
     </CartContext.Provider>
   );
