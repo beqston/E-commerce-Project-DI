@@ -24,7 +24,7 @@ type FormData = {
 
 const Checkout = ()=> {
 
-  const {cart, clearCart, handlLessMOre} = useContext(CartContext) as CartContextType;
+  const {cart, clearCart, handlLessMOre, nom} = useContext(CartContext) as CartContextType;
   const [lessElement, setLessElement] = useState(true)
   const {register, handleSubmit, formState: {errors}}= useForm<FormData>();
 
@@ -410,34 +410,58 @@ const Checkout = ()=> {
               <div className="succses-item-left">
 
                 {
-                  cart.map((item)=> {
-                    return(
-                      <div className="succses-item">
-                      <img
-                        src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
-                        alt="photo"
-                      />
-                      <div className="succses-price-cnt">
-                        <h4>{item.product.name.split(" ").slice(0, -1).join(" ")}</h4>
-                        <p className="price">${item.product.price}</p>
+                  lessElement? (
+                    cart.map((item)=> {
+                      return(
+                        <div className="succses-item">
+                        <img
+                          src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
+                          alt="photo"
+                        />
+                        <div className="succses-price-cnt">
+                          <h4>{item.product.name.split(" ").slice(0, -1).join(" ")}</h4>
+                          <p className="price">${item.product.price}</p>
+                        </div>
+                        <p className="succses-amount">
+                          x
+                          {item.amount}
+                        </p>
                       </div>
-                      <p className="succses-amount">
-                        x
-                        {item.amount}
-                      </p>
-                    </div>
-                    )
-                  })
+                      )
+                    })
+                  ):(
+                    nom.map((item)=> {
+                      return(
+                        <div className="succses-item">
+                        <img
+                          src={`http://localhost:5173/${item.product?.categoryImage.desktop}`}
+                          alt="photo"
+                        />
+                        <div className="succses-price-cnt">
+                          <h4>{item.product.name.split(" ").slice(0, -1).join(" ")}</h4>
+                          <p className="price">${item.product.price}</p>
+                        </div>
+                        <p className="succses-amount">
+                          x
+                          {item.amount}
+                        </p>
+                      </div>
+                      )
+                    })
+                  )
                 }
 
-                <hr className="succses-hr" />
 
-                <p onClick={()=>{
+                <hr className="succses-hr" />
+                
+                {cart.length > 1? <p onClick={()=>{
                   handlLessMOre()
                   setLessElement(!lessElement)
                 }} className="view-less">
+                  
                   {lessElement? "View less": "View More"}
-                </p>
+                  
+                </p>: ""}
 
               </div>
 
