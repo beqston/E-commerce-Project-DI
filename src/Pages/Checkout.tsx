@@ -21,7 +21,6 @@ type FormData = {
 }
 
 
-
 const Checkout = ()=> {
 
   const {cart, clearCart, handlLessMOre, succsesArr} = useContext(CartContext) as CartContextType;

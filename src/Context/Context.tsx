@@ -1,5 +1,6 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { ProductsType } from "../Types/ProductsTypes";
+
 
 export type CartItemType = {
   product: ProductsType;
@@ -20,16 +21,21 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItemType[]>([]);
   const [succsesArr, setSuccsesArr] = useState<CartItemType[]>([]);
 
+  useEffect(()=> {
+    if(JSON.parse(localStorage.getItem("saveItem") || '[]')){
+      setCart(JSON.parse(localStorage.getItem("saveItem") || '[]'))
+    }
+  },[])
+
   const handlLessMOre = ()=> {
     if(cart.length > 1 || cart.length === 1){
       setSuccsesArr([cart[0]])
-    }else{
-      setCart(cart)
     }
   }
 
   const clearCart = () => {
     setCart([]);
+    localStorage.setItem("saveItem", JSON.stringify([]))
   };
 
   const updateCart = (num: number, prod: ProductsType) => {
@@ -39,6 +45,7 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
         (currItem) => currItem.product.id !== prod.id
       );
       setCart(newCart);
+      localStorage.setItem("saveItem", JSON.stringify(newCart))
     }
 
     if (num > 0) {
@@ -51,8 +58,12 @@ const CartContextProvider = ({ children }: { children: ReactNode }) => {
             : { ...currItem, amount: num }
         );
         setCart(newCart);
+        localStorage.setItem("saveItem", JSON.stringify(newCart))
+
       } else {
-        setCart([...cart, { amount: num, product: prod }]);
+        const newCart =[...cart, { amount: num, product: prod }] 
+        setCart(newCart);
+        localStorage.setItem("saveItem", JSON.stringify(newCart))  
       }
     }
   };
