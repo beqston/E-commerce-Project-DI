@@ -5,6 +5,10 @@ import Layout from "../Layout/Layout";
 import Product from "../Pages/Product";
 import Products from "../Pages/Products";
 import Checkout from "../Pages/Checkout";
+import UsersPage from "../Pages/UsersPage";
+import Register from "../Pages/Register";
+import Login from "../Pages/Login";
+import UserProfile from "../Pages/UserProfile";
 
 
 const RouterComponent = ()=> {
@@ -16,6 +20,16 @@ const RouterComponent = ()=> {
                 <Route path="/products/:productsName/:productID"  element={<Product />} />
                 <Route path="/chekout" element={<Checkout />} />
                 <Route path="*"  element={<NotFound />} />
+
+
+                <Route>
+                    <Route path="users"  element={<UsersPage />} />
+                    <Route path="register"  element={<Register />} />
+                    <Route path="login"  element={<Login />} />
+                    <Route path="profile"  element={<UserProfile />} />
+                </Route>
+                
+
             </Route>
         </Routes>
     )

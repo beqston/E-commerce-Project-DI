@@ -9,6 +9,7 @@ import Modal from 'react-modal';
 import { CartContext, CartContextType } from "../../Context/Context";
 import "./style.scss"
 import CountInput from "../CountInput/CountInput";
+import login from "../../assets/Photos/HeaderPhoto/login.png"
 
 
 const Header = () => {
@@ -85,9 +86,12 @@ const Header = () => {
         </div>
 
         <div className={classname["header-right-container"]}>
+
           
           <div className={classname["card-img"]}>
+            <img onClick={()=> navigate("/register")} className={classname.login} src={login} alt="image" />
             <img onClick={()=> setIsOpen(true)} src={Card} alt="Card" />
+
 
             <Modal
             className="header-modal-bg"

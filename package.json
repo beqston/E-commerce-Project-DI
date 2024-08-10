@@ -12,7 +12,6 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
     "@types/react-modal": "^3.16.3",
-    "axios": "^1.7.2",
     "json-server": "^1.0.0-beta.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

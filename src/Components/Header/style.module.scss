@@ -1,4 +1,5 @@
 .header-container{
+    min-width: 100%;
     width: 100%;
     background-color: var(--color-bgblack);
     display: flex;
@@ -60,7 +61,13 @@
         width: 35%;
         display: flex;
         justify-content: center;
-        align-items: center;  
+        align-items: center; 
+        .login{
+            width: 30px;
+            border-radius: 50%;
+            transform: translateY(4px);
+            padding-right: 4px;
+        } 
 
         img{
             padding-top: 2rem;

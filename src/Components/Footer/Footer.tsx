@@ -52,8 +52,8 @@ const Footer = () => {
 
             <div className={classname['icon-cnt']}>
               <Link to={'https://www.facebook.com'} target="_blanck"><img src={facebook} alt="facebook" /></Link>
-              <Link to={'https://x.com'}><img src={twitter} alt="twitter" /></Link>
-              <Link to={'https://www.instagram.com'}><img src={instagram} alt="instagram" /></Link>
+              <Link to={'https://x.com'} target="_blanck"><img src={twitter} alt="twitter" /></Link>
+              <Link to={'https://www.instagram.com'} target="_blanck"><img src={instagram} alt="instagram" /></Link>
             </div>
 
           </div>
