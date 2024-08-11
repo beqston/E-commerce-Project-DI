@@ -9,6 +9,7 @@ import UsersPage from "../Pages/UsersPage";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import UserProfile from "../Pages/UserProfile";
+import ProtectedRoute from "../ui/ProtectedRoute";
 
 
 const RouterComponent = ()=> {
@@ -20,19 +21,14 @@ const RouterComponent = ()=> {
                 <Route path="/products/:productsName/:productID"  element={<Product />} />
                 <Route path="/chekout" element={<Checkout />} />
                 <Route path="*"  element={<NotFound />} />
+                <Route path="register"  element={<Register />} />
+                <Route path="login"  element={<Login />} />             
+            </Route>
 
-
-                <Route>
-                    <Route path="users"  element={<UsersPage />} />
-                    <Route path="register"  element={<Register />} />
-                    <Route path="login"  element={<Login />} />
+            <Route element={<ProtectedRoute />}>
                     <Route path="profile"  element={<UserProfile />} />
                 </Route>
-                
-
-            </Route>
         </Routes>
     )
 }
-  
   export default RouterComponent;

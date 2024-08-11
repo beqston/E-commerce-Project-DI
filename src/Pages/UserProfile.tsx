@@ -1,3 +1,4 @@
+import "../assets/style/profile.css"
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseConfig";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +12,7 @@ type User = {
 
 const UserProfile = ()=> {
 
-    const {user, setUser} = useState<null | any>(null);
+    const [user, setUser] = useState<null | any>(null);
     const navigate = useNavigate();
 
     const getUser = async ()=> {
@@ -25,7 +26,7 @@ const UserProfile = ()=> {
     const logOut = async ()=> {
         const {error} = await supabase.auth.signOut();
         if(!error){
-            navigate("/");
+            navigate("/login");
         }
 
     }
@@ -33,16 +34,17 @@ const UserProfile = ()=> {
     useEffect(()=> {
         getUser()
     }, [])
+    
     return(
-        <div>
-            <h1>user profile</h1>
+        <div className="profile-cnt">
+            <h2 className="profile-h2">user profile</h2>
 
-            <ul>
+            <ul className="profile-list">
                 <li>email: {user?.email}</li>
                 <li>age: {user?.user_metadata.age}</li>
             </ul>
 
-            <button onClick={logOut}>Log Out</button>
+            <button className="profile-btn" onClick={logOut}>Log Out</button>
         </div>
     )
 }

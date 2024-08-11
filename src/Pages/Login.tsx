@@ -1,3 +1,4 @@
+import "../assets/style/login.css"
 import { useForm } from "react-hook-form";
 import Input from "../Components/Input/Input";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,7 +13,7 @@ const Login = ()=> {
     const {register, formState:{errors}, handleSubmit} = useForm<LoginFormData>();
     const navigate = useNavigate()
 
-    const registerUser = async (formData: LoginFormData)=> {
+    const loginUser = async (formData: LoginFormData)=> {
         const {data, error} = await supabase.auth.signInWithPassword({
         email:formData.email,
         password: formData.password,
@@ -21,19 +22,18 @@ const Login = ()=> {
     }
 
     const onSubmit = async (data: LoginFormData)=> {
-       const {data: userData, error} = await registerUser(data);
+       const {data: userData, error} = await loginUser(data);
        if(!error){
         navigate('/profile')
        }
     }
 
     return(
-        <div>
-            <h1>register</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                
-
-                <div style={{width: "300px"}}>
+        <div className="login-cnt">
+            
+            <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+                <h2 className="login-h2">Login</h2>
+                <div className="login-input">
                 <Input
                   title="Email Address"
                   type="email"
@@ -42,42 +42,28 @@ const Login = ()=> {
 
                   {...register("email", {
                     required:true,
-                    pattern: {
-                      value:
-                        /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/g,
-                      message: "Please enter valid email",
-                    },
                   })}
                   isError={Boolean(errors.email)}
                 />
                 </div>
-                <div style={{width: "300px"}}>
+                <div className="login-input">
                 <Input
-                  title="password"
+                  title="Password"
                   type="password"
                   placeholder="password"
                   id="password"
 
                   {...register("password", {
                     required:true,
-                    pattern: {
-                      value:
-                        /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/g,
-                      message: "Please enter valid email",
-                    },
-                    maxLength: {
-                        value: 4,
-                        message: "please enter min 4 symbol"
-                    }
                   })}
                   isError={Boolean(errors.email)}
                 />
                 </div>
 
-             <button type="submit">Login</button>
+              <button className="login-btn" type="submit">Login</button>
+              <Link to={"/register"}>Don't Have An Account?</Link>  
             </form>
 
-            <Link to={"/register"}>Don"t Have An ACount?</Link>
 
         </div>
     )

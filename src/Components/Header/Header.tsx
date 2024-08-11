@@ -10,6 +10,7 @@ import { CartContext, CartContextType } from "../../Context/Context";
 import "./style.scss"
 import CountInput from "../CountInput/CountInput";
 import login from "../../assets/Photos/HeaderPhoto/login.png"
+import profile from "../../assets/Photos/HeaderPhoto/profile.png"
 
 
 const Header = () => {
@@ -19,6 +20,12 @@ const Header = () => {
   
   const [menuList, setMenutList] = useState("none");
   const [modalIsOpen, setIsOpen] = useState(false);
+
+  let isAut = false;
+
+  if(window.localStorage.getItem("sb-kcevngpaeplxtwdwbrll-auth-token")){
+      isAut = true
+  }
 
 
   const handlBurgIcon = () => {
@@ -89,7 +96,10 @@ const Header = () => {
 
           
           <div className={classname["card-img"]}>
-            <img onClick={()=> navigate("/register")} className={classname.login} src={login} alt="image" />
+            {
+              isAut? <img onClick={()=> navigate("/profile")} className={classname.profile} src={profile} alt="image" />:<img onClick={()=> navigate("/login")} className={classname.login} src={login} alt="image" />
+            }
+            
             <img onClick={()=> setIsOpen(true)} src={Card} alt="Card" />
 
 
