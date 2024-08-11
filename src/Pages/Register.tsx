@@ -2,7 +2,7 @@ import "../assets/style/register.css"
 import { useForm } from "react-hook-form";
 import supabase from "../config/supabaseConfig";
 import Input from "../Components/Input/Input";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export type UserFormData = {
@@ -112,6 +112,8 @@ const Register = ()=> {
                 </div>
 
              <button className="register-btn" type="submit">register</button>
+             <br />
+             <Link to={"/login"} >Do You Have An Account?</Link>
             </form>
 
         </div>

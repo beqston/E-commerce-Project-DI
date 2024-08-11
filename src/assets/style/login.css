@@ -15,7 +15,7 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     background-color:rgb(93, 164, 164);
+     background-color:rgba(93, 164, 164, 0.492);
      width: 48%;
      margin-top: 2rem;
      margin-bottom: 2rem;

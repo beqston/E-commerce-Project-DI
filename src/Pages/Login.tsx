@@ -24,7 +24,7 @@ const Login = ()=> {
     const onSubmit = async (data: LoginFormData)=> {
        const {data: userData, error} = await loginUser(data);
        if(!error){
-        navigate('/profile')
+        navigate('/')
        }
     }
 

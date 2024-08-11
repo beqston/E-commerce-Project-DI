@@ -259,7 +259,7 @@ footer{
  footer{
     .rentacle-img{
         img{
-            transform: translateX(-40px);
+            transform: translateX(-10px);
         }
     }
 
@@ -269,19 +269,52 @@ footer{
             width: 100%;
             .img-audiofile{
                 img{
-                    transform: translateX(-40px);
+                    transform: translateX(-20px);
                 }
             }
         }
     }
 
     .span-text{
-        transform: translateX(-40px);
+        transform: translateX(-10px);
     }
 
     .icon-cnt{
         a{
-            transform: translateX(-180px);
+            transform: translateX(-150px);
+            display: flex;
+            margin: 8px;
+        }
+    }
+ }      
+}
+
+
+
+@media screen and (max-width: 375px) {
+ footer{
+    .rentacle-img{
+        img{
+            transform: translateX(-22px);
+        }
+    }
+    .footer-container{
+        .head-bottom-cnt{
+            .img-audiofile{
+                img{
+                    transform: translateX(-22px);
+                }
+            }
+        }
+    }
+
+    .span-text{
+        transform: translateX(-20px);
+    }
+
+    .icon-cnt{
+        a{
+            transform: translateX(-148px);
             display: flex;
             margin: 8px;
         }
