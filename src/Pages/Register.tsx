@@ -37,7 +37,7 @@ const Register = ()=> {
     }
 
     const onSubmit = async (data: UserFormData)=> {
-       const {data: userData, error} = await registerUser(data);
+       const { error} = await registerUser(data);
        
        if(!error){
         navigate('/profile')
@@ -111,7 +111,7 @@ const Register = ()=> {
                 />
                 </div>
 
-             <button className="register-btn" type="submit">register</button>
+             <button className="register-btn" type="submit">Sign Up</button>
              <br />
              <Link to={"/login"} >Do You Have An Account?</Link>
             </form>

@@ -30,9 +30,9 @@ const Product = ()=> {
 
 
     const getData = async ()=> {
-        const res = await fetch('http://localhost:3000/products')
+        const res = await fetch('http://localhost:5173/data.json')
         const data = await res.json()
-        setProds(data)
+        setProds(data.products)
     }
 
     useEffect(()=> {

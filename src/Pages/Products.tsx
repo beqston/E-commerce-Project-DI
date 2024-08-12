@@ -16,11 +16,12 @@ const Products = ()=> {
     const {productsName} = useParams()
     
     const [prods, setProds] = useState<null | ProductsType[]>(null)
+    console.log(prods)
 
     const getData = async ()=> {
-        const res = await fetch('http://localhost:3000/products')
+        const res = await fetch('http://localhost:5173/data.json')
         const data = await res.json()
-        setProds(data)
+        setProds(data.products)
     }
 
     useEffect(()=> {
@@ -72,6 +73,7 @@ const Products = ()=> {
                         <div className={classname['text-cnt']}>
                             {prod.new? <span>new product</span>: null}
                             <h2>{prod.name}</h2>
+                            
                             <p>{prod.description}</p>
                             <Link to={`http://localhost:5173/products/${prod.category}/${prod.id}`}><ButtonChokolate /></Link>
                         </div>

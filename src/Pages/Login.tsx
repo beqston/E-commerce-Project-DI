@@ -22,7 +22,7 @@ const Login = ()=> {
     }
 
     const onSubmit = async (data: LoginFormData)=> {
-       const {data: userData, error} = await loginUser(data);
+       const { error} = await loginUser(data);
        if(!error){
         navigate('/')
        }
@@ -32,7 +32,7 @@ const Login = ()=> {
         <div className="login-cnt">
             
             <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="login-h2">Login</h2>
+                <h2 className="login-h2">Authorization</h2>
                 <div className="login-input">
                 <Input
                   title="Email Address"
@@ -60,7 +60,7 @@ const Login = ()=> {
                 />
                 </div>
 
-              <button className="login-btn" type="submit">Login</button>
+              <button className="login-btn" type="submit">Sing In</button>
               <Link to={"/register"}>Don't Have An Account?</Link>  
             </form>
 

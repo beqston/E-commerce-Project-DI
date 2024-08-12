@@ -50,7 +50,7 @@ const Checkout = ()=> {
            Go Back
           </p>
 
-          <form className="chekout-form"  onSubmit={handleSubmit(OnSubmit)}>
+          <form className="chekout-form" onSubmit={handleSubmit(OnSubmit)}>
 
           <main className="chekout-main-cnt">
 
