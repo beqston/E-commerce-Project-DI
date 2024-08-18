@@ -12,7 +12,7 @@ type User = {
 
 const UserProfile = ()=> {
 
-    const [user, setUser] = useState<null | any>(null);
+    const [user, setUser] = useState<User | any>();
     const navigate = useNavigate();
 
     const getUser = async ()=> {

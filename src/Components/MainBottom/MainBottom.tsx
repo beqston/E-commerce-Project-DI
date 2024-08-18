@@ -1,6 +1,4 @@
 import classname from "./style.module.scss"
-// import img1D from "../../../public/assets/shared/desktop/image-best-gear.jpg"
-// import img1T from "../../../public/assets/shared/tablet/image-best-gear.jpg"
 import img1D from "../../assets/Photos/MainBottomImg/Bitmap.png"
 
 const MainBottom = () => {

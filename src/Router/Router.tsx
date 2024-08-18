@@ -5,7 +5,6 @@ import Layout from "../Layout/Layout";
 import Product from "../Pages/Product";
 import Products from "../Pages/Products";
 import Checkout from "../Pages/Checkout";
-import UsersPage from "../Pages/UsersPage";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import UserProfile from "../Pages/UserProfile";
@@ -26,8 +25,8 @@ const RouterComponent = ()=> {
             </Route>
 
             <Route element={<ProtectedRoute />}>
-                    <Route path="profile"  element={<UserProfile />} />
-                </Route>
+                <Route path="profile"  element={<UserProfile />} />
+            </Route>
         </Routes>
     )
 }

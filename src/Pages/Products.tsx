@@ -10,13 +10,8 @@ import MainBottom from "../Components/MainBottom/MainBottom";
 
 
 const Products = ()=> {
-
-
-
     const {productsName} = useParams()
-    
     const [prods, setProds] = useState<null | ProductsType[]>(null)
-    console.log(prods)
 
     const getData = async ()=> {
         const res = await fetch('http://localhost:5173/data.json')
